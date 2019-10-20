@@ -26,7 +26,7 @@ class SkillTest {
         }
 
         for (skill in skills) {
-            val str=skill.toString()
+            val str = skill.toString()
             println(str)
         }
     }

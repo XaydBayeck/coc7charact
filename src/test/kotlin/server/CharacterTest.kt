@@ -66,12 +66,12 @@ class CharacterTest {
         val character = Character(characterData)
         println(character.toString())
 
-        val characterJson2="""
+        val characterJson2 = """
            {"chInfo":{"plName":"sid","pcName":"sid","sex":"男","job":"","age":24,"center":"现代","addr":"ChengDu","home":"GuiZhou"},"chAttr":{"str":67,"con":87,"siz":56,"dex":76,"app":54,"int":65,"pow":64,"edu":76},"attr":{"hp":14,"hpm":14,"mp":12,"mpm":12,"san":64,"luck":65}} 
         """
-        val characterData2=Json.parse(CharacterData.serializer(),characterJson2)
+        val characterData2 = Json.parse(CharacterData.serializer(), characterJson2)
         println(characterData2)
-        val character2=Character(characterData2)
+        val character2 = Character(characterData2)
         println(character2.toString())
     }
 }

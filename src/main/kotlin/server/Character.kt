@@ -45,7 +45,7 @@ class Character {
         return str
     }
 
-    fun toHtml(): String{
+    fun toHtml(): String {
         var str = "<h5><--=== === ===角色卡信息=== === ===--></h5>"
         str += chInfo.toHtml()
         str += chAttr.toHtml()
@@ -92,7 +92,7 @@ class Character {
             throw IllegalArgumentException()
         }
 
-        fun copySelf():Chem
+        fun copySelf(): Chem
     }
 
     class ChInform : Chem {
@@ -149,7 +149,7 @@ class Character {
             return str
         }
 
-        fun toHtml():String{
+        fun toHtml(): String {
             var str = "<p><--<--<--角色信息-->-->--><br>"
             str += "  角色姓名：$plName<br>"
             str += "  玩家姓名：$pcName<br>"
@@ -169,7 +169,7 @@ class Character {
 
 
         private var str = 0
-            set(sTR: Int) {
+            set(sTR) {
                 field = setWay(sTR, 90, 15, 1)
             }
 
@@ -266,7 +266,7 @@ class Character {
             return str
         }
 
-        fun toHtml():String{
+        fun toHtml(): String {
             var str = "<p><--<--<--<--角色属性-->-->-->--><br>"
             str += "力量：${this.str}  "
             str += "体质：$con<br>"
@@ -331,7 +331,7 @@ class Character {
             return str
         }
 
-        fun toHtml():String{
+        fun toHtml(): String {
             var str = "<p><--<--<--属性-->-->--><br>"
             str += "HP：$hp/$hpm  "
             str += "MP：$mp/$mpm<br>"

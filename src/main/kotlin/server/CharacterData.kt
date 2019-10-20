@@ -23,24 +23,24 @@ data class CharacterData(
     @Serializable
     data class ChInform(
 
-            val plName:String,
-            val pcName:String,
-            val sex:String,
-            val job:String,
-            val age:Int,
-            val center:String,
-            val addr:String,
-            val home:String
+            val plName: String,
+            val pcName: String,
+            val sex: String,
+            val job: String,
+            val age: Int,
+            val center: String,
+            val addr: String,
+            val home: String
     )
 
     @Serializable
     data class Attr(
-            val hp:Int,
-            val hpm:Int,
-            val mp:Int,
-            val mpm:Int,
-            val san:Int,
-            val luck:Int
+            val hp: Int,
+            val hpm: Int,
+            val mp: Int,
+            val mpm: Int,
+            val san: Int,
+            val luck: Int
     )
 
 }
