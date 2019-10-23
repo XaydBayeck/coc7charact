@@ -6,25 +6,21 @@ import kotlinx.serialization.parseList
 import org.junit.Test
 import java.io.File
 
-class SkillTest {
+class JobTest {
     @ImplicitReflectionSerializer
     @Test
-    fun testSkill() {
-        val jsonPath = "src/resource/skill.json"
+    fun jobTest() {
+
+        val jsonPath = "src/resource/joblist.json"
         var jsonList = ""
         File(jsonPath).forEachLine(action = {
             jsonList += it
             jsonList += "\n"
         })
-        val skillsData = Json.parseList<SkillData>(jsonList)
-        val skills = ArrayList<Skill>(0)
-        for (skillData in skillsData) {
-            val skill = Skill(skillData)
-            skills.add(skill)
-        }
+        val jobList = Json.parseList<Job>(jsonList)
 
-        for (skill in skills) {
-            val str = skill.toString()
+        for (job in jobList) {
+            val str = job.toString()
             println(str)
         }
     }
