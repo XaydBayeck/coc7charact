@@ -10,7 +10,7 @@ import java.io.InputStreamReader
 import java.net.InetSocketAddress
 import kotlin.io.forEachLine as forEachLine
 
-fun main(args: Array<String>) {
+fun main() {
     val server = HttpServer.create(InetSocketAddress(8989), 100)
     server.createContext("/", GetHandler())
     server.start()

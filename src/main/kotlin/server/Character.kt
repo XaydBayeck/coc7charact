@@ -50,7 +50,7 @@ class Character {
         str += chInfo.toHtml()
         str += chAttr.toHtml()
         str += attr.toHtml()
-        str += "<h5><--=== === ===角色卡信息=== === ===--></h1>"
+        str += "<h5><--=== === ===角色卡信息=== === ===--></h5>"
         return str
     }
 
