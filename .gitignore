@@ -2,7 +2,7 @@ target
 .idea
 .settings
 src/web/less.js-master
-src/web/node_module
 .classpath
 .project
 KtServelet.iml
+/src/web/node_modules/

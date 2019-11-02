@@ -24,7 +24,8 @@ class Character {
 
     constructor()
 
-    constructor(chInfo: CharacterData.ChInform, chAttr: CharacterData.ChAttr, attr: CharacterData.Attr) {
+    constructor(chInfo: CharacterData.ChInform, chAttr: CharacterData.ChAttr,
+                attr: CharacterData.Attr) {
         this.chInfo = ChInform(chInfo)
         this.chAttr = ChAttr(chAttr)
         this.attr = Attr(attr)
@@ -131,8 +132,8 @@ class Character {
         }
 
         override fun copySelf(): ChInform {
-            return ChInform(CharacterData.ChInform(plName, pcName, sex, job, age, center, addr,
-                    home))
+            return ChInform(CharacterData.ChInform(plName, pcName, sex, job,
+                    age, center, addr, home))
         }
 
         override fun toString(): String {
