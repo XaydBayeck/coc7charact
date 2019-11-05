@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'Bonbon bueu';
+    src: url('../fonts/Bonbon bueu.ttf')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: backgroundChange 10s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    flex-direction: column;
+}
+
+.notfound {
+    text-align: center;
+    font-family: 'Bonbon bueu', serif;
+    color: #13964e;
+    text-shadow: 0 0 10px #1a8654;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#h1 {
+    font-size: 248px;
+    line-height: 128px;
+}
+
+p {
+    font-size: 48px;
+    letter-spacing: 5px;
+}
+
+.touzi {
+    display: block;
+    width: 200px;
+    height: 65px;
+    position: relative;
+    margin: 40px;
+}
+
+.dian {
+    z-index: 3;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #13964e;
+    border-radius: 50% 50%;
+    position: absolute;
+    box-shadow: 0 0 5px #1a8654;
+}
+
+#yi {
+    top: 6%;
+    left: 6%;
+}
+
+#er {
+    top: 35%;
+    left: 35%;
+}
+
+#san {
+    top: 64%;
+    left: 64%;
+}
+
+.mian {
+    display: block;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 10px #1a8654;
+}
+
+#mian1 {
+    z-index: 2;
+    border: 1px solid #13964e;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#zhe {
+    z-index: 1;
+    position: absolute;
+    background-color: #000000;
+    bottom: 0;
+    left: 0;
+}
+
+#mian2 {
+    z-index: 0;
+    border: 1px solid #13964e;
+    position: absolute;
+    top: 0;
+    left: 5%;
+}
+
+.touzi>p {
+    position: relative;
+    top: 10%;
+    left: 20%;
+}
+
+#light {
+    display: block;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    /*box-shadow: 0 0 400px 100px #1a8654,*/
+    /*    0 0 800px 50px #1a8654,*/
+    /*    0 0 1600px 25px #1a8654;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: lighting 5s infinite;
+}
+
+@keyframes lighting {
+    0% {
+        box-shadow: 0 0 400px 100px #000000,
+            0 0 800px 50px #000000,
+            0 0 1600px 25px #000000;
+    }
+
+    50% {
+        box-shadow: 0 0 400px 100px #1a8654,
+            0 0 800px 50px #1a8654,
+            0 0 1600px 25px #1a8654;
+    }
+
+    100% {
+        box-shadow: 0 0 400px 100px #000000,
+            0 0 800px 50px #000000,
+            0 0 1600px 25px #000000;
+    }
+}

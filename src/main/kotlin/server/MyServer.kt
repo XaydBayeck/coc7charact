@@ -15,9 +15,11 @@ class MyServer(
         private val faviconPath: String
 ) : AbstractVerticle() {
 
+    private val kinds= arrayListOf("fonts","stylesheet")
+
     override fun start() {
 
-        val vertx = Vertx.vertx()
+        vertx = Vertx.vertx()
 
         val server = vertx.createHttpServer()
 
@@ -29,18 +31,36 @@ class MyServer(
                 FaviconHandler.create(faviconPath)
         )
 
+        router.route(HttpMethod.GET, "/web/:kind/:path").handler { context ->
+            val path = context.request().getParam("path")
+            val kind = context.request().getParam("kind")
+            println("route1 $kind/$path")
+            context.reroute("/$kind/$path")
+        }
+
         // web handler
         router.route(HttpMethod.GET, "/web/:path").handler { context ->
             val response = context.response()
             val path = context.request().getParam("path")
+            println("route2 $path")
             response.putHeader("content-type", "text/plain")
-            val file = File("$webPath/$path")
-            if (file.exists()) {
-                context.reroute("/static/$path")
-            } else {
-                println("src/web/$path is not exists!")
-                context.reroute("/not_found")
-            }
+            context.reroute(fileTest(path))
+        }
+
+        router.route(HttpMethod.GET, "/stylesheet/:path").handler { context ->
+            val response = context.response()
+            val path = context.request().getParam("path")
+            println("route3 $path")
+            response.putHeader("content-type", "text/plain")
+            context.reroute(fileTest("/stylesheet/$path"))
+        }
+
+        router.route(HttpMethod.GET, "/fonts/:path").handler { context ->
+            val response = context.response()
+            val path = context.request().getParam("path")
+            println("route4 $path")
+            response.putHeader("content-type", "text/plain")
+            context.reroute(fileTest("/fonts/$path"))
         }
 
         // static handler
@@ -61,6 +81,16 @@ class MyServer(
 
         server.requestHandler(router).listen(port)
         println("server is starting in $port")
+    }
+
+    private fun fileTest(path: String):String{
+        val file = File("$webPath/$path")
+        return if (!file.exists()) {
+            println("$webPath/$path is not exists!")
+            "/not_found"
+        } else {
+            "/static/$path"
+        }
     }
 }
 
