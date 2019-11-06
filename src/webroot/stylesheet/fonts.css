@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Bonbon bueu';
+    src: url('../fonts/Bonbon bueu.ttf')
+}
+
+@font-face {
+    font-family: 'ChikenScratchAOE';
+    src: url("../fonts/ChickenScratchAOE.otf");
+}
+
+@font-face {
+    font-family: 'Matro Web Font';
+    src: url("../fonts/ffad_matro-webfont.woff.ttf");
+}
+
+@font-face {
+    font-family: 'MicroBrew';
+    src: url("../fonts/MicroBrew.ttf");
+}
+
+@font-face {
+    font-family: 'RabbitsHole';
+    src: url("../fonts/RabbitsHole.otf");
+}
+
+@font-face {
+    font-family: 'LanZhuFeng';
+    src: url("../fonts/LanZhuFeng.ttf");
+}

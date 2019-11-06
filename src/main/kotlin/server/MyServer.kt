@@ -15,7 +15,7 @@ class MyServer(
         private val faviconPath: String
 ) : AbstractVerticle() {
 
-    private val kinds= arrayListOf("fonts","stylesheet")
+    private val kinds = arrayListOf("fonts", "stylesheet")
 
     override fun start() {
 
@@ -34,7 +34,7 @@ class MyServer(
         router.route(HttpMethod.GET, "/web/:kind/:path").handler { context ->
             val path = context.request().getParam("path")
             val kind = context.request().getParam("kind")
-            println("route1 $kind/$path")
+            println("route-Web-turn $kind/$path")
             context.reroute("/$kind/$path")
         }
 
@@ -42,7 +42,7 @@ class MyServer(
         router.route(HttpMethod.GET, "/web/:path").handler { context ->
             val response = context.response()
             val path = context.request().getParam("path")
-            println("route2 $path")
+            println("route-Web $path")
             response.putHeader("content-type", "text/plain")
             context.reroute(fileTest(path))
         }
@@ -50,7 +50,7 @@ class MyServer(
         router.route(HttpMethod.GET, "/stylesheet/:path").handler { context ->
             val response = context.response()
             val path = context.request().getParam("path")
-            println("route3 $path")
+            println("route-Style $path")
             response.putHeader("content-type", "text/plain")
             context.reroute(fileTest("/stylesheet/$path"))
         }
@@ -58,7 +58,7 @@ class MyServer(
         router.route(HttpMethod.GET, "/fonts/:path").handler { context ->
             val response = context.response()
             val path = context.request().getParam("path")
-            println("route4 $path")
+            println("route-Fonts $path")
             response.putHeader("content-type", "text/plain")
             context.reroute(fileTest("/fonts/$path"))
         }
@@ -83,7 +83,7 @@ class MyServer(
         println("server is starting in $port")
     }
 
-    private fun fileTest(path: String):String{
+    private fun fileTest(path: String): String {
         val file = File("$webPath/$path")
         return if (!file.exists()) {
             println("$webPath/$path is not exists!")
@@ -95,7 +95,7 @@ class MyServer(
 }
 
 fun main() {
-    val projectSettings = ProjectSettings()
+    val projectSettings=ProjectSettings("src/resource/server.properties")
     val server = MyServer(
             projectSettings.port,
             projectSettings.notfound,

@@ -5,4 +5,6 @@ src/web/less.js-master
 .classpath
 .project
 KtServelet.iml
-/src/web/node_modules/
+src/web/node_modules/
+src/resource/mad.jpg
+src/resource/call of Ctulhu.jpg

@@ -10,7 +10,7 @@ import java.util.Properties
  * @author sid
  * @date 2019/11/2下午11:01
  */
-class ProjectSettings {
+class ProjectSettings(settingsPath:String) {
 
     val port: Int
     val notfound: String
@@ -19,7 +19,7 @@ class ProjectSettings {
 
     init {
         val prop = Properties()
-        val fis = FileInputStream("src/resource/server.properties")
+        val fis = FileInputStream(settingsPath)
         prop.load(fis)
         port = prop.getProperty("port", "8080").toInt()
         notfound = prop.getProperty("404")
