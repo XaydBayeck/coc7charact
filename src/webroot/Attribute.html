@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>决定属性</title>
+  <style type="text/css" media="screen">
+    .value>* {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="attrs">
+      <div class="attr" v-for="attr in attrs">
+        <div class="name">{{ attr.name }}</div>
+
+        <div class="value">
+          <button @click="sub(attr)">-</button>
+          <p>{{ attr.value }}</p>
+          <button @click="add(attr)">+</button>
+        </div>
+      </div>
+      <button @click="rollAttrs">随机属性</button>
+    </div>
+    <div id="discr">
+      <h4>你的人物特征</h4>
+      <ul>
+        <li v-for="dscr in dscrs">{{ dscr.text[dscr.ranger] }}</li>
+      </ul>
+    </div>
+  </div>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="Attribute.js"></script>
+</body>
+
+</html>
