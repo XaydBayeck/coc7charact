@@ -18,7 +18,6 @@
     <div class="attrs">
       <div class="attr" v-for="attr in attrs">
         <div class="name">{{ attr.name }}</div>
-
         <div class="value">
           <button @click="sub(attr)">-</button>
           <p>{{ attr.value }}</p>
@@ -27,12 +26,20 @@
       </div>
       <button @click="rollAttrs">随机属性</button>
     </div>
-    <div id="discr">
+    <div id="dscr">
       <h4>你的人物特征</h4>
       <ul>
-        <li v-for="dscr in dscrs">{{ dscr.text[dscr.ranger] }}</li>
+        <li v-for="attr in attrs">{{ attr.currentText }}</li>
       </ul>
     </div>
+    <div id="attrs2">
+      <div class="attr" v-for="attr in attrs2">
+        <div class="name">{{ attr.name }}</div>
+        <div class="value">{{ attr.value }}</div>
+      </div>
+      <button @click="rollLucky">试试运气</button>
+    </div>
+    <button @click="submit">提交</button>
   </div>
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
