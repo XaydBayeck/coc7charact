@@ -4,7 +4,8 @@ target
 src/web/less.js-master
 .classpath
 .project
-KtServelet.iml
+coc7charact.iml
 src/web/node_modules/
 src/resource/mad.jpg
 src/resource/call of Ctulhu.jpg
+/coc7charact.iml
