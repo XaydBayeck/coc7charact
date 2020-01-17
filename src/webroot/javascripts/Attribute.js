@@ -250,6 +250,13 @@ var app = new Vue({
         }
       };
       console.log(character);
+      axios.post('./Information.html',character)
+        .then(function (response){
+          console.log(response);
+        })
+        .catch(function(error){
+          console.log(error);
+        })
     }
   }
 });
