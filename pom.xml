@@ -10,6 +10,17 @@
 
     <repositories>
         <repository>
+          <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+              <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>bintray-kotlin-kotlinx</id>
             <name>bintray</name>
             <url>https://kotlin.bintray.com/kotlinx</url>
@@ -17,7 +28,7 @@
     </repositories>
 
     <properties>
-        <kotlin.version>1.3.50</kotlin.version>
+        <kotlin.version>1.3.61</kotlin.version>
         <junit.version>4.12</junit.version>
         <serialization.version>0.13.0</serialization.version>
         <main.class>server.testServelet</main.class>
@@ -52,7 +63,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-script-runtime</artifactId>
-            <version>1.3.50</version>
+            <version>1.3.61</version>
             <scope>compile</scope>
         </dependency>
 

@@ -4,6 +4,7 @@ import io.vertx.core.AbstractVerticle
 import io.vertx.core.Vertx
 import io.vertx.core.http.HttpMethod
 import io.vertx.ext.web.Router
+import io.vertx.ext.web.handler.BodyHandler
 import io.vertx.ext.web.handler.FaviconHandler
 import io.vertx.ext.web.handler.StaticHandler
 import java.io.File
@@ -26,6 +27,9 @@ class MyServer(
         // web 路由器
         val router = Router.router(vertx)
 
+        // 创建 BodyHandler
+        router.route().handler(BodyHandler.create())
+
         // favicon.ico handler
         router.route().handler(
                 FaviconHandler.create(faviconPath)
@@ -45,6 +49,14 @@ class MyServer(
             println("route-Web $path")
             response.putHeader("content-type", "text/plain")
             context.reroute(fileTest(path))
+        }
+
+        router.route(HttpMethod.GET, "/javascripts/:path").handler { context ->
+            val response = context.response()
+            val path = context.request().getParam("path")
+            println("route-Style $path")
+            response.putHeader("content-type", "text/plain")
+            context.reroute(fileTest("/javascripts/$path"))
         }
 
         router.route(HttpMethod.GET, "/stylesheet/:path").handler { context ->

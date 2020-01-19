@@ -250,7 +250,7 @@ var app = new Vue({
         }
       };
       console.log(character);
-      axios.post('./Information.html',character)
+      axios.post('/web/Information.html',character)
         .then(function (response){
           console.log(response);
         })
