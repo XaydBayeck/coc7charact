@@ -1,13 +1,13 @@
 package server
 
 import io.vertx.core.AbstractVerticle
+import io.vertx.core.Handler
 import io.vertx.core.Vertx
-import io.vertx.core.http.HttpMethod
 import io.vertx.ext.web.Router
+import io.vertx.ext.web.RoutingContext
 import io.vertx.ext.web.handler.BodyHandler
 import io.vertx.ext.web.handler.FaviconHandler
 import io.vertx.ext.web.handler.StaticHandler
-import java.io.File
 
 class MyServer(
         private val port: Int,
@@ -17,97 +17,61 @@ class MyServer(
 ) : AbstractVerticle() {
 
     private val kinds = arrayListOf("fonts", "stylesheet")
+    val characterBuilder=CharacterBuilder()
 
     override fun start() {
+        val vert= Vertx.vertx()
 
-        vertx = Vertx.vertx()
+        val router = createRouter(vert)
 
-        val server = vertx.createHttpServer()
-
-        // web 路由器
-        val router = Router.router(vertx)
-
-        // 创建 BodyHandler
-        router.route().handler(BodyHandler.create())
-
-        // favicon.ico handler
-        router.route().handler(
-                FaviconHandler.create(faviconPath)
-        )
-
-        router.route(HttpMethod.GET, "/web/:kind/:path").handler { context ->
-            val path = context.request().getParam("path")
-            val kind = context.request().getParam("kind")
-            println("route-Web-turn $kind/$path")
-            context.reroute("/$kind/$path")
-        }
-
-        // web handler
-        router.route(HttpMethod.GET, "/web/:path").handler { context ->
-            val response = context.response()
-            val path = context.request().getParam("path")
-            println("route-Web $path")
-            response.putHeader("content-type", "text/plain")
-            context.reroute(fileTest(path))
-        }
-
-        router.route(HttpMethod.GET, "/javascripts/:path").handler { context ->
-            val response = context.response()
-            val path = context.request().getParam("path")
-            println("route-Style $path")
-            response.putHeader("content-type", "text/plain")
-            context.reroute(fileTest("/javascripts/$path"))
-        }
-
-        router.route(HttpMethod.GET, "/stylesheet/:path").handler { context ->
-            val response = context.response()
-            val path = context.request().getParam("path")
-            println("route-Style $path")
-            response.putHeader("content-type", "text/plain")
-            context.reroute(fileTest("/stylesheet/$path"))
-        }
-
-        router.route(HttpMethod.GET, "/fonts/:path").handler { context ->
-            val response = context.response()
-            val path = context.request().getParam("path")
-            println("route-Fonts $path")
-            response.putHeader("content-type", "text/plain")
-            context.reroute(fileTest("/fonts/$path"))
-        }
-
-        // static handler
-        router.route("/static/*").handler(
-                StaticHandler
-                        .create()
-                        .setWebRoot(webPath)
-                        .setFilesReadOnly(true)
-        )
-
-        // not found handler
-        router.route().pathRegex("/not_found|.*").handler { context ->
-            context.response()
-                    .putHeader("content-type", "text/html")
-                    .statusCode = 404
-            context.reroute("/static/$_404pageName")
-        }
-
+        val server = vert.createHttpServer()
         server.requestHandler(router).listen(port)
-        println("server is starting in $port")
+        println("Server is starting in port $port")
     }
 
-    private fun fileTest(path: String): String {
-        val file = File("$webPath/$path")
-        return if (!file.exists()) {
-            println("$webPath/$path is not exists!")
-            "/not_found"
-        } else {
-            "/static/$path"
-        }
+    private fun createRouter(vert:Vertx) = Router.router(vert).apply {
+        route().handler(BodyHandler.create())
+        route().handler(FaviconHandler.create(faviconPath))
+        post("/post/character/:part").handler(characterPostHandler)
+        get("/").handler(myRootHandler)
+        route("/static/*").handler(StaticHandler.create().setWebRoot(webPath))
+        errorHandler(404,myFailureHandler)
     }
+
+    // Handlers
+    private val myRootHandler = Handler<RoutingContext> { req ->
+        req.response().end("welcome!")
+    }
+
+    private val myFailureHandler = Handler<RoutingContext> { req ->
+        req.response()
+                .putHeader("content-type", "text/html")
+                .statusCode = 404
+        req.reroute("/static/$_404pageName")
+    }
+
+    private val characterPostHandler = Handler<RoutingContext> { req ->
+        println("POST the Attribute")
+        val part = req.pathParam("part")
+        val jsonObj = req.bodyAsJson
+        when (part) {
+            "Attribute" -> {
+                this.characterBuilder.addAttribute(jsonObj)
+            }
+            "Information" -> {
+                this.characterBuilder.information=jsonObj
+            }
+            "Job" -> {
+                this.characterBuilder.job=jsonObj
+            }
+        }
+        req.response().end(jsonObj.encode())
+    }
+
 }
 
 fun main() {
-    val projectSettings=ProjectSettings("src/resource/server.properties")
+    val projectSettings = ProjectSettings("src/resource/server.properties")
     val server = MyServer(
             projectSettings.port,
             projectSettings.notfound,

@@ -24,6 +24,10 @@
       flex-direction: column;
     }
 
+    iframe {
+      height: 100%;
+    }
+
     #menu {
       width: 100%;
       border-bottom: 1px solid #13964e;
@@ -37,7 +41,7 @@
     .logo>a {
       padding: 0;
       color: #13964e;
-      font-family: 'RabbitsHole';
+      font-family: 'RabbitsHole',serif;
       font-size: 36px;
       cursor: pointer;
       text-decoration: none;
@@ -64,54 +68,36 @@
     </div>
   </div>
   <div id="app">
-    <div class="info" v-for="infor in infors">
-      <p class="name"></p>
-      <input type="text" class="value">
+    <div class="attrs">
+      <div class="attr" v-for="attr in attrs">
+        <div class="name">{{ attr.name }}</div>
+        <div class="value">
+          <button @click="sub(attr)">-</button>
+          <p>{{ attr.value }}</p>
+          <button @click="add(attr)">+</button>
+        </div>
+      </div>
+      <button @click="rollAttrs">随机属性</button>
+    </div>
+    <div id="dscr">
+      <h4>你的人物特征</h4>
+      <ul>
+        <li v-for="attr in attrs">{{ attr.currentText }}</li>
+      </ul>
+    </div>
+    <div id="attrs2">
+      <div class="attr" v-for="attr in attrs2">
+        <div class="name">{{ attr.name }}</div>
+        <div class="value">{{ attr.value }}</div>
+      </div>
+      <button @click="rollLucky">试试运气</button>
     </div>
     <button @click="submit">提交</button>
   </div>
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="./javascripts/Information.js"></script>
-  <script>
-    var app = new Vue(
-      {
-        el: "#app",
-        data: {
-          infors: [
-            {
-              name: "玩家",
-              value: ""
-            },
-            {
-              name: "角色姓名",
-              value: ""
-            },
-            {
-              name: "性别",
-              value: ""
-            },
-            {
-              name: "年龄",
-              value: ""
-            },
-            {
-              name: "职业",
-              value: ""
-            },
-            {
-              name: "住址",
-              value: ""
-            },
-            {
-              name: "故乡",
-              value: ""
-            }
-          ]
-        }
-      }
-    )
-  </script>
+  <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+  <script src="javascripts/Attribute.js"></script>
 </body>
 
 </html>
