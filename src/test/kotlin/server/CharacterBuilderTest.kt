@@ -5,7 +5,31 @@ import kotlinx.serialization.UnstableDefault
 import org.junit.Test
 
 class CharacterBuilderTest {
-    val Attributes = """
+    private val jobJson = """
+  {
+    "name": "自定义",
+    "description": "与KP商量自定义符合世界观背景的职业",
+    "profsPoint": {
+      "skill1": "教育",
+      "mag1": 4,
+      "skill2": "力量",
+      "orSkill2": "力量",
+      "mag2": 0
+    },
+    "belief": {
+      "max": 0,
+      "min": 100
+    },
+    "relationShip": "无",
+    "proSkill": [
+      "暂无"
+    ],
+    "kind": "普通职业",
+    "skillPoint": "教育 X 4"
+  }
+        """.trimIndent()
+
+    private val attributes = """
         { 
             "chAttr":{
                 "str":70,
@@ -15,7 +39,8 @@ class CharacterBuilderTest {
                 "app":70,
                 "edu":70,
                 "int":70,
-                "pow":70
+                "pow":70,
+                "mov":7
             },
             "attr":{
                 "hp":14,
@@ -28,12 +53,12 @@ class CharacterBuilderTest {
         }
     """.trimIndent()
 
-    val Information = """
+    private val information = """
         {
             "plName":"sid",
             "pcName":"sid",
             "sex":"man",
-            "job":"student",
+            "job":$jobJson,
             "age":24,
             "center":"2000s",
             "addr":"ChengDu",
@@ -46,11 +71,11 @@ class CharacterBuilderTest {
     fun characterBuilderTest() {
         val characterBuilder = CharacterBuilder()
 
-        val Attribute = JsonObject(this.Attributes)
-        val Information = JsonObject(this.Information)
+        val attribute = JsonObject(this.attributes)
+        val information = JsonObject(this.information)
 
-        characterBuilder.addAttribute(Attribute)
-        characterBuilder.information = Information
+        characterBuilder.addAttribute(attribute)
+        characterBuilder.information = information
 
         val character = characterBuilder.makeCharacter()
 

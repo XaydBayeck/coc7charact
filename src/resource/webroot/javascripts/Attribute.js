@@ -236,7 +236,8 @@ const app = new Vue({
                     "app": this.attrs[4].value,
                     "edu": this.attrs[5].value,
                     "int": this.attrs[6].value,
-                    "pow": this.attrs[7].value
+                    "pow": this.attrs[7].value,
+                    "mov": this.moveValue
                 },
                 "attr": {
                     "hp": this.attrs2[0].value,
@@ -255,7 +256,78 @@ const app = new Vue({
                 .catch(function (error) {
                     console.log(error);
                 });
+
+            axios.post('/post/character/damageAndBody',this.damageAndBody)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
             location.href = "Information.html"
+        }
+    },
+    computed: {
+        moveValue: function () {
+            const str = this.attrs[0].value;
+            const size = this.attrs[2].value;
+            const dex = this.attrs[3].value;
+            let move;
+            if (str < size && dex < size) {
+                move = 7
+            } else if (str > size && dex > size) {
+                move = 9
+            } else {
+                move = 8
+            }
+            return move;
+        },
+        damageAndBody: function () {
+            const str = this.attrs[0].value;
+            const size = this.attrs[2].value;
+            const strADDsize = str + size;
+            let value = {
+                damagePlusValue: {
+                    fixed: 0,
+                    diceNum: 0,
+                    diceFace: 0
+                },
+                body: 0
+            };
+            if (strADDsize < 65) {
+                value.body = -2;
+                value.damagePlusValue.fixed = -2;
+            } else if (strADDsize < 85) {
+                value.body = -1;
+                value.damagePlusValue.fixed = -1;
+            } else if (strADDsize < 125) {
+                value.damagePlusValue.fixed = 0;
+                value.body = 0;
+            } else if (strADDsize < 165) {
+                value.body = 1;
+                value.damagePlusValue.diceNum = 1;
+                value.damagePlusValue.diceFace = 4;
+            } else if (strADDsize < 205) {
+                value.body = 2;
+                value.damagePlusValue.diceNum = 1;
+                value.damagePlusValue.diceFace = 6;
+            } else {
+                const plus = parseInt(strADDsize - 204) / 80;
+                value.body = 6 + plus;
+                value.damagePlusValue.diceNum = 5 + plus;
+                value.damagePlusValue.diceFace = 6;
+            }
+            return value;
+        },
+        dbPlusValue:function () {
+            const diceNum = this.damageAndBody.damagePlusValue.diceNum;
+            if (diceNum!==0){
+                const diceFace = this.damageAndBody.damagePlusValue.diceFace;
+                return diceNum+"d"+diceFace;
+            }else {
+                return this.damageAndBody.damagePlusValue.fixed;
+            }
         }
     }
 });

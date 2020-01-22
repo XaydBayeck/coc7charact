@@ -22,19 +22,23 @@ class Character {
             field = value.copySelf()
         }
 
+    private var damageAndBody = CharacterData.DamageAndBody(CharacterData.DamageAndBody.DamagePlusValue(0, 0), 0)
+
     constructor()
 
     constructor(chInfo: CharacterData.ChInform, chAttr: CharacterData.ChAttr,
-                attr: CharacterData.Attr) {
+                attr: CharacterData.Attr, damageAndBody: CharacterData.DamageAndBody) {
         this.chInfo = ChInform(chInfo)
         this.chAttr = ChAttr(chAttr)
         this.attr = Attr(attr)
+        this.damageAndBody = damageAndBody
     }
 
     constructor(characterData: CharacterData) {
         chInfo = ChInform(characterData.chInfo)
         chAttr = ChAttr(characterData.chAttr)
         attr = Attr(characterData.attr)
+        damageAndBody = characterData.damageAndBody
     }
 
     override fun toString(): String {
@@ -105,7 +109,7 @@ class Character {
 
         private var sex: String = "性别"
 
-        private var job: String = "职业"
+        private lateinit var job: Job
 
         private var age: Int = 0
             set(value) {
@@ -209,16 +213,21 @@ class Character {
                 field = setWay(pOW, 90, 15, 1)
             }
 
+        var mov: Int = 0
+            set(mOV) {
+                field = setWay(mOV, 10, 1, 1)
+            }
+
         constructor()
 
         constructor(attrs: IntArray) {
 
-            if (attrs.size == 8) {
-                for (i in 0..7) {
+            if (attrs.size == 9) {
+                for (i in 0..8) {
                     setByNum(i, attrs[i])
                 }
             } else {
-                throw IllegalArgumentException("only 8 attributes!")
+                throw IllegalArgumentException("only 9 attributes!")
             }
         }
 
@@ -231,10 +240,11 @@ class Character {
             int = chAttr.int
             pow = chAttr.pow
             edu = chAttr.edu
+            mov = chAttr.mov
         }
 
         override fun copySelf(): ChAttr {
-            val attrs = intArrayOf(str, con, siz, dex, app, int, pow, edu)
+            val attrs = intArrayOf(str, con, siz, dex, app, int, pow, edu, mov)
             return ChAttr(attrs)
         }
 
@@ -248,8 +258,9 @@ class Character {
                 5 -> int = attr
                 6 -> pow = attr
                 7 -> edu = attr
+                8 -> mov = attr
 
-                else -> throw IllegalArgumentException("only 8 attributes!")
+                else -> throw IllegalArgumentException("only 9 attributes!")
             }
         }
 
@@ -263,6 +274,7 @@ class Character {
             str += "智力：$int\n"
             str += "意志：$pow  "
             str += "教育：$edu\n"
+            str += "移动：$mov\n"
             str += "<--<--<--<--角色属性-->-->-->-->\n"
             return str
         }
@@ -277,6 +289,7 @@ class Character {
             str += "智力：$int<br>"
             str += "意志：$pow  "
             str += "教育：$edu<br>"
+            str += "移动：$mov"
             str += "<--<--<--<--角色属性-->-->-->--></p><br>"
             return str
         }

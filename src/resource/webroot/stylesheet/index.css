@@ -23,15 +23,15 @@ body {
 
 #title {
     color: #13964e;
-    font-family: 'RabbitsHole';
+    font-family: 'RabbitsHole', serif;
     /* font-family: 'ChickenScratchAOE'; */
     /* font-family: 'MicroBrew'; */
     font-size: 128px;
 }
 
-#botton {
+#bottom {
     color: #13964e;
-    font-family: 'LanZhuFeng';
+    font-family: 'LanZhuFeng', serif;
     font-size: 36px;
     border: 1px solid #13964e;
     width: 50%;
@@ -40,53 +40,53 @@ body {
     text-decoration: none;
 }
 
-#botton:hover {
-    box-shadow: 0px 0px 10px #13964e,
-        0px 0px 20px #13964e;
+#bottom:hover {
+    box-shadow: 0 0 10px #13964e,
+    0 0 20px #13964e;
 }
 
-#botton:active {
+#bottom:active {
     animation: shank 0.5s forwards;
 }
 
 @keyframes shank {
     0% {
-        text-shadow: 0px 0px 10px #13964e;
+        text-shadow: 0 0 10px #13964e;
     }
 
     10% {
-        text-shadow: 0px 0px 10px #13964e,
-            0px 0px 20px #13964e,
-            0px 0px 40px #13964e,
-            0px 0px 80px #13964e,
-            0px 0px 160px #13964e;
+        text-shadow: 0 0 10px #13964e,
+        0 0 20px #13964e,
+        0 0 40px #13964e,
+        0 0 80px #13964e,
+        0 0 160px #13964e;
     }
 
     100% {
         text-shadow: 0px 0px 10px #13964e,
-            0px 0px 20px #13964e,
-            0px 0px 40px #13964e,
-            0px 0px 80px #13964e,
-            0px 0px 160px #13964e;
+        0 0 20px #13964e,
+        0 0 40px #13964e,
+        0 0 80px #13964e,
+        0 0 160px #13964e;
     }
 }
 
 @keyframes lightScan {
     0% {
-        text-shadow: 0px 0px 10px #13964e,
-            0px 10px 20px #13964e,
-            0px 20px 30px #13964e;
+        text-shadow: 0 0 10px #13964e,
+        0 10px 20px #13964e,
+        0 20px 30px #13964e;
     }
 
     50% {
-        text-shadow: 0px 0px 10px #13964e,
-            0px -10px 20px #13964e,
-            0px -20px 30px #13964e;
+        text-shadow: 0 0 10px #13964e,
+        0 -10px 20px #13964e,
+        0 -20px 30px #13964e;
     }
 
     100% {
-        text-shadow: 0px 0px 10px #13964e,
-            0px 10px 20px #13964e,
-            0px 20px 30px #13964e;
+        text-shadow: 0 0 10px #13964e,
+        0 10px 20px #13964e,
+        0 20px 30px #13964e;
     }
 }

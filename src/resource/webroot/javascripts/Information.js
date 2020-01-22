@@ -67,7 +67,7 @@ const app = new Vue({
                 "plName": this.infors[0].value,
                 "pcName": this.infors[1].value,
                 "sex": this.infors[2].value,
-                "job": jobSelect.selectJob,
+                "job": jobVue.job,
                 "age": this.infors[4].value,
                 "center": this.infors[5].value,
                 "addr": this.infors[6].value,
@@ -142,7 +142,7 @@ const jobSelect = new Vue({
     },
     mounted() {
         axios
-            .get("/static/json/joblist.json")
+            .get("./json/joblist.json")
             .then(response => {
                 this.jobList = response.data;
                 // for (let i in this.jobList) {

@@ -10,8 +10,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 0,
-      "min": 100
+      "min": 0,
+      "max": 100
     },
     "relationShip": "无",
     "proSkill": [
@@ -31,8 +31,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 70
+      "min": 30,
+      "max": 70
     },
     "relationShip": "生意伙伴，法律界，金融业界（银行，其他会计师）",
     "proSkill": [
@@ -58,8 +58,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 20
+      "min": 9,
+      "max": 20
     },
     "relationShip": "业余运动员圈，体育专栏作家，马戏团，嘉年华管理者",
     "proSkill": [
@@ -85,8 +85,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 40
+      "min": 9,
+      "max": 40
     },
     "relationShip": "戏剧产业，报刊艺术批评家，演员公会",
     "proSkill": [
@@ -112,8 +112,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 90
+      "min": 20,
+      "max": 90
     },
     "relationShip": "电影工作室，媒体评论员，作家",
     "proSkill": [
@@ -138,8 +138,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 45
+      "min": 20,
+      "max": 45
     },
     "relationShip": "本地执法机构，客户",
     "proSkill": [
@@ -166,8 +166,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 60
+      "min": 10,
+      "max": 60
     },
     "relationShip": "其他精神疾病研究者，医生，有时还有执法机构的侦探",
     "proSkill": [
@@ -193,8 +193,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 10,
-      "min": 40
+      "min": 10,
+      "max": 40
     },
     "relationShip": "动物园，马戏团，赞助人，演员",
     "proSkill": [
@@ -221,8 +221,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 70
+      "min": 30,
+      "max": 70
     },
     "relationShip": "书商，古董收藏者，历史研究学会",
     "proSkill": [
@@ -249,8 +249,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 50
+      "min": 30,
+      "max": 50
     },
     "relationShip": "本地的历史学家，其他古董商，可能还包括赝造师",
     "proSkill": [
@@ -276,8 +276,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 40
+      "min": 10,
+      "max": 40
     },
     "relationShip": "赞助人，博物馆，大学",
     "proSkill": [
@@ -304,8 +304,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 70
+      "min": 30,
+      "max": 70
     },
     "relationShip": "本地建设和城市规划部门，建筑公司",
     "proSkill": [
@@ -332,8 +332,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 50
+      "min": 9,
+      "max": 50
     },
     "relationShip": "美术馆，美术批评家，富有的赞助人，广告业者",
     "proSkill": [
@@ -359,8 +359,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 8,
-      "min": 20
+      "min": 8,
+      "max": 20
     },
     "relationShip": "医护人员，患者和患者家属。允许接触医疗记录、药品或其他医疗用品",
     "proSkill": [
@@ -386,8 +386,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 70
+      "min": 9,
+      "max": 70
     },
     "relationShip": "体育界，体育专栏作家，其他明星",
     "proSkill": [
@@ -414,8 +414,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "出版社，文学评论家，历史学家等",
     "proSkill": [
@@ -442,8 +442,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 8,
-      "min": 25
+      "min": 8,
+      "max": 25
     },
     "relationShip": "常客，可能有犯罪组织",
     "proSkill": [
@@ -469,8 +469,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 50
+      "min": 20,
+      "max": 50
     },
     "relationShip": "外国政府官员，狩猎监管人员，前客户（大多很有钱），黑市商人与黑社会，动物园主",
     "proSkill": [
@@ -497,8 +497,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 20,
-      "min": 40
+      "min": 20,
+      "max": 40
     },
     "relationShip": "目录学家、其他书商、图书馆和大学、客户",
     "proSkill": [
@@ -525,8 +525,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "保释业者，本地警察，线人",
     "proSkill": [
@@ -553,8 +553,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 60
+      "min": 9,
+      "max": 60
     },
     "relationShip": "运动会主办者，记者，犯罪组织，专业训练人员",
     "proSkill": [
@@ -580,8 +580,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 40
+      "min": 9,
+      "max": 40
     },
     "relationShip": "其他家政服务人员、本地企业、家庭用品供应商",
     "proSkill": [
@@ -607,8 +607,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 60
+      "min": 9,
+      "max": 60
     },
     "relationShip": "教会高层、地方教会、社区领导",
     "proSkill": [
@@ -635,8 +635,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 70
+      "min": 10,
+      "max": 70
     },
     "relationShip": "其他IT工作者，同事和上司，专业网络社区",
     "proSkill": [
@@ -661,8 +661,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 70
+      "min": 10,
+      "max": 70
     },
     "relationShip": "其他IT工作者，专业网络社区，政治团体，犯罪组织",
     "proSkill": [
@@ -688,8 +688,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 10,
-      "min": 40
+      "min": 10,
+      "max": 40
     },
     "relationShip": "本地商人，其他工匠和艺术家",
     "proSkill": [
@@ -714,8 +714,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 30,
-      "min": 60
+      "min": 30,
+      "max": 60
     },
     "relationShip": "很少，大都是黑社会的人，人们尽量避免和他们交情过深。最强大的杀手也可能得到一个可畏的名声",
     "proSkill": [
@@ -742,8 +742,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 5,
-      "min": 75
+      "min": 5,
+      "max": 75
     },
     "relationShip": "同伙（不论是现在还是以前的），独行罪犯，犯罪组织",
     "proSkill": [
@@ -770,8 +770,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 5,
-      "min": 30
+      "min": 5,
+      "max": 30
     },
     "relationShip": "犯罪组织，本地执法机构，本地企业",
     "proSkill": [
@@ -797,8 +797,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 5,
-      "min": 40
+      "min": 5,
+      "max": 40
     },
     "relationShip": "赃物贩子，其他的盗贼",
     "proSkill": [
@@ -825,8 +825,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 10,
-      "min": 65
+      "min": 10,
+      "max": 65
     },
     "relationShip": "其他的诈骗师，独行罪犯",
     "proSkill": [
@@ -852,8 +852,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 5,
-      "min": 65
+      "min": 5,
+      "max": 65
     },
     "relationShip": "轻罪罪犯，本地执法机构",
     "proSkill": [
@@ -880,8 +880,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 10,
-      "min": 80
+      "min": 10,
+      "max": 80
     },
     "relationShip": "黑帮，执法机构，本地企业",
     "proSkill": [
@@ -907,8 +907,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 40
+      "min": 20,
+      "max": 40
     },
     "relationShip": "犯罪组织，贸易伙伴，黑市和和守法的买主",
     "proSkill": [
@@ -935,8 +935,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 20,
-      "min": 60
+      "min": 20,
+      "max": 60
     },
     "relationShip": "犯罪组织，商人",
     "proSkill": [
@@ -963,8 +963,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 60
+      "min": 20,
+      "max": 60
     },
     "relationShip": "犯罪组织，海岸卫队，海关官员",
     "proSkill": [
@@ -991,8 +991,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 3,
-      "min": 10
+      "min": 3,
+      "max": 10
     },
     "relationShip": "其他轻罪罪犯，其他混混，本地的赃物贩子，黑帮，当然还有警察",
     "proSkill": [
@@ -1019,8 +1019,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 60
+      "min": 30,
+      "max": 60
     },
     "relationShip": "主要的信徒都是普通人。不过首领的魅力越高，信徒当中有电影明星或者富有的寡妇之类名人的可能性就越大",
     "proSkill": [
@@ -1045,8 +1045,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 20,
-      "min": 50
+      "min": 20,
+      "max": 50
     },
     "relationShip": "本地和国家的执法机构，罪犯，宗教团体",
     "proSkill": [
@@ -1073,8 +1073,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 20,
-      "min": 60
+      "min": 20,
+      "max": 60
     },
     "relationShip": "广告业，媒体，家具业，建筑业，其他",
     "proSkill": [
@@ -1101,8 +1101,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 50,
-      "min": 99
+      "min": 50,
+      "max": 99
     },
     "relationShip": "多种多样，但通常是背景和趣味相近的人。同好会组织、波希米亚主义者、上流社会",
     "proSkill": [
@@ -1127,8 +1127,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "海岸警卫队，船长，军队，执法机构，走私者",
     "proSkill": [
@@ -1155,8 +1155,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 80
+      "min": 30,
+      "max": 80
     },
     "relationShip": "其他医生，医护工作者，病人和前病人",
     "proSkill": [
@@ -1178,8 +1178,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 0,
-      "min": 5
+      "min": 0,
+      "max": 5
     },
     "relationShip": "其他流浪者，少数友善的铁路工人，城镇里众多的好心人",
     "proSkill": [
@@ -1205,8 +1205,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 10,
-      "min": 40
+      "min": 10,
+      "max": 40
     },
     "relationShip": "成功商界人士（包括罪犯），政要",
     "proSkill": [
@@ -1232,8 +1232,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 20
+      "min": 9,
+      "max": 20
     },
     "relationShip": "顾客，企业，执法机构和街头路人",
     "proSkill": [
@@ -1260,8 +1260,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "街头路人，偶尔有一些有名的顾客",
     "proSkill": [
@@ -1288,8 +1288,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 30
+      "min": 10,
+      "max": 30
     },
     "relationShip": "新闻业界，地方政府，专业人士（如时装设计师、运动员、商人），出版社",
     "proSkill": [
@@ -1315,8 +1315,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 50,
-      "min": 90
+      "min": 50,
+      "max": 90
     },
     "relationShip": "公务员，政府，新闻媒体，企业，外国政府，可能有犯罪组织",
     "proSkill": [
@@ -1343,8 +1343,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 60
+      "min": 30,
+      "max": 60
     },
     "relationShip": "生意伙伴或部队同事，地方政府，建筑师",
     "proSkill": [
@@ -1371,8 +1371,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 70
+      "min": 9,
+      "max": 70
     },
     "relationShip": "歌舞杂技团，剧院，电影工作室，娱乐评论家，犯罪组织，电视台（现代）",
     "proSkill": [
@@ -1398,8 +1398,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 55,
-      "min": 80
+      "min": 55,
+      "max": 80
     },
     "relationShip": "大图书馆，大学，博物馆，富有的赞助者，其他探险家，出版社，外国政府官员，本地土著",
     "proSkill": [
@@ -1426,8 +1426,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "地方银行，地方政治家，各州农业部门",
     "proSkill": [
@@ -1454,8 +1454,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 20,
-      "min": 40
+      "min": 20,
+      "max": 40
     },
     "relationShip": "联邦司法机构，执法机构，犯罪组织",
     "proSkill": [
@@ -1482,8 +1482,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "市政工人，医务人员，执法机构",
     "proSkill": [
@@ -1510,8 +1510,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 40
+      "min": 10,
+      "max": 40
     },
     "relationShip": "国内外新闻界，外国政府，军队",
     "proSkill": [
@@ -1537,8 +1537,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 40,
-      "min": 60
+      "min": 40,
+      "max": 60
     },
     "relationShip": "实验室工作人员，执法机构，医护人员",
     "proSkill": [
@@ -1565,8 +1565,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 8,
-      "min": 50
+      "min": 8,
+      "max": 50
     },
     "relationShip": "其他赌徒，犯罪组织，街头路人",
     "proSkill": [
@@ -1592,8 +1592,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 60,
-      "min": 95
+      "min": 60,
+      "max": 95
     },
     "relationShip": "犯罪组织，街头罪犯，警察，地方政府，政治家，法官，工会，律师，同民族的代表",
     "proSkill": [
@@ -1619,8 +1619,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 20
+      "min": 9,
+      "max": 20
     },
     "relationShip": "街头罪犯，警察，企业，同民族的代表",
     "proSkill": [
@@ -1645,8 +1645,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 40,
-      "min": 90
+      "min": 40,
+      "max": 90
     },
     "relationShip": "上流社会和乡绅，政治家，仆人和农民",
     "proSkill": [
@@ -1672,8 +1672,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 0,
-      "min": 5
+      "min": 0,
+      "max": 5
     },
     "relationShip": "其他游民，少数友好的铁路员工，许多城镇里的好心人",
     "proSkill": [
@@ -1700,8 +1700,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 6,
-      "min": 15
+      "min": 6,
+      "max": 15
     },
     "relationShip": "其他医疗人员，病人。允许接触医疗记录、药品等等",
     "proSkill": [
@@ -1728,8 +1728,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "新闻媒体，政治团体与政府，商界，执法机构，街头罪犯，上流社会",
     "proSkill": [
@@ -1756,8 +1756,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 50,
-      "min": 80
+      "min": 50,
+      "max": 80
     },
     "relationShip": "法律界，可能有犯罪组织",
     "proSkill": [
@@ -1784,8 +1784,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 30
+      "min": 10,
+      "max": 30
     },
     "relationShip": "大学，科学家，图书馆",
     "proSkill": [
@@ -1810,8 +1810,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "其他工人和行业主管",
     "proSkill": [
@@ -1838,8 +1838,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "林业工人，野外向导和环境保护者",
     "proSkill": [
@@ -1866,8 +1866,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "工会干部，政治团体",
     "proSkill": [
@@ -1894,8 +1894,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 80
+      "min": 30,
+      "max": 80
     },
     "relationShip": "犯罪组织，资本家，检察官和法官",
     "proSkill": [
@@ -1920,8 +1920,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 35
+      "min": 9,
+      "max": 35
     },
     "relationShip": "书商，社会团体，专业研究人员",
     "proSkill": [
@@ -1945,8 +1945,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 40
+      "min": 9,
+      "max": 40
     },
     "relationShip": "工会成员，其他专业技术人员",
     "proSkill": [
@@ -1972,8 +1972,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 70
+      "min": 20,
+      "max": 70
     },
     "relationShip": "部队，联邦政府",
     "proSkill": [
@@ -1999,8 +1999,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 0,
-      "min": 30
+      "min": 0,
+      "max": 30
     },
     "relationShip": "教会阶层，外国官员",
     "proSkill": [
@@ -2026,8 +2026,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 30,
-      "min": 60
+      "min": 30,
+      "max": 60
     },
     "relationShip": "其他登山者，环境保护者，赞助人，担保人，本地救援队或执法机构，护林员，运动俱乐部",
     "proSkill": [
@@ -2054,8 +2054,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 30
+      "min": 10,
+      "max": 30
     },
     "relationShip": "本地的大学和学者，出版社，博物馆赞助者",
     "proSkill": [
@@ -2082,8 +2082,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "俱乐部老板，音乐家协会，犯罪组织，街头罪犯",
     "proSkill": [
@@ -2107,8 +2107,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "护工，医生，社区工作人员",
     "proSkill": [
@@ -2135,8 +2135,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 65
+      "min": 9,
+      "max": 65
     },
     "relationShip": "图书馆员，神秘学学会或者同好会，其他神秘学家",
     "proSkill": [
@@ -2164,8 +2164,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 5,
-      "min": 20
+      "min": 5,
+      "max": 20
     },
     "relationShip": "本地居民，土著，贸易商",
     "proSkill": [
@@ -2192,8 +2192,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "大学，超心理学刊物",
     "proSkill": [
@@ -2220,8 +2220,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 35,
-      "min": 75
+      "min": 35,
+      "max": 75
     },
     "relationShip": "本地社区，本地医生，医院和病人。能获得各种药品和化学品",
     "proSkill": [
@@ -2248,8 +2248,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "广告业，本地客户（包括政治团体和报纸）",
     "proSkill": [
@@ -2275,8 +2275,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 30
+      "min": 10,
+      "max": 30
     },
     "relationShip": "新闻业，电影工作室(1920年代)，外国政府和官方",
     "proSkill": [
@@ -2302,8 +2302,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 70
+      "min": 20,
+      "max": 70
     },
     "relationShip": "前部队关系人，乘务员，机械师，机场地勤人员，嘉年华主办者",
     "proSkill": [
@@ -2329,8 +2329,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 60
+      "min": 30,
+      "max": 60
     },
     "relationShip": "前部队关系人，其他飞行员，机场地勤技术人员，商人",
     "proSkill": [
@@ -2357,8 +2357,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 50
+      "min": 20,
+      "max": 50
     },
     "relationShip": "执法机构，街头罪犯，尸检部门，司法部门，犯罪组织",
     "proSkill": [
@@ -2385,8 +2385,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "执法机构，本地企业与居民，街头罪犯，犯罪组织",
     "proSkill": [
@@ -2412,8 +2412,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "执法机构，客户",
     "proSkill": [
@@ -2440,8 +2440,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 20,
-      "min": 70
+      "min": 20,
+      "max": 70
     },
     "relationShip": "学者，大学，图书馆",
     "proSkill": [
@@ -2465,8 +2465,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 0,
-      "min": 10
+      "min": 0,
+      "max": 10
     },
     "relationShip": "本地企业和居民",
     "proSkill": [
@@ -2488,8 +2488,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 5,
-      "min": 50
+      "min": 5,
+      "max": 50
     },
     "relationShip": "街头路人，警察，可能有犯罪组织，私人客户",
     "proSkill": [
@@ -2515,8 +2515,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 30,
-      "min": 80
+      "min": 30,
+      "max": 80
     },
     "relationShip": "其他精神疾病领域的专家，医生，可能有法律人士",
     "proSkill": [
@@ -2543,8 +2543,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 10,
-      "min": 40
+      "min": 10,
+      "max": 40
     },
     "relationShip": "心理学家团体，病人",
     "proSkill": [
@@ -2570,8 +2570,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "学者和其他学术界人士，大型企业，外国政府和个人",
     "proSkill": [
@@ -2596,8 +2596,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "军队，退伍军人协会",
     "proSkill": [
@@ -2624,8 +2624,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 40
+      "min": 20,
+      "max": 40
     },
     "relationShip": "海岸警卫队，走私者，犯罪组织",
     "proSkill": [
@@ -2652,8 +2652,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 40
+      "min": 9,
+      "max": 40
     },
     "relationShip": "同行企业，感兴趣的顾客",
     "proSkill": [
@@ -2679,8 +2679,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 50
+      "min": 9,
+      "max": 50
     },
     "relationShip": "其他科学家和学术界人士，大学，所在企业和前员工",
     "proSkill": [
@@ -2705,8 +2705,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "其他办公室人员，客户公司的高管",
     "proSkill": [
@@ -2732,8 +2732,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 40
+      "min": 20,
+      "max": 40
     },
     "relationShip": "本地的居民企业，本地警察，地方政府，顾客",
     "proSkill": [
@@ -2759,8 +2759,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 30
+      "min": 9,
+      "max": 30
     },
     "relationShip": "军队，退伍军人协会",
     "proSkill": [
@@ -2786,8 +2786,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 20,
-      "min": 60
+      "min": 20,
+      "max": 60
     },
     "relationShip": "一般只有自己的上线，可能还有其他的秘密关系人",
     "proSkill": [
@@ -2814,8 +2814,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 5,
-      "min": 10
+      "min": 5,
+      "max": 10
     },
     "relationShip": "学院、其他学生，实习生也可能有商人等",
     "proSkill": [
@@ -2839,8 +2839,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 10,
-      "min": 50
+      "min": 10,
+      "max": 50
     },
     "relationShip": "电影和电视剧工作室，爆炸品和烟花生产企业，演员和导演",
     "proSkill": [
@@ -2868,8 +2868,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 0,
-      "min": 15
+      "min": 0,
+      "max": 15
     },
     "relationShip": "其他部落成员",
     "proSkill": [
@@ -2896,8 +2896,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 20,
-      "min": 40
+      "min": 20,
+      "max": 40
     },
     "relationShip": "没有什么关系",
     "proSkill": [
@@ -2924,8 +2924,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 5,
-      "min": 50
+      "min": 5,
+      "max": 50
     },
     "relationShip": "其他劳动领袖，政治伙伴，可能有犯罪组织。在1920年代，还有社会主义者、共产主义者、无政府主义者",
     "proSkill": [
@@ -2951,8 +2951,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 9,
-      "min": 20
+      "min": 9,
+      "max": 20
     },
     "relationShip": "顾客，犯罪组织",
     "proSkill": [
@@ -2978,8 +2978,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 20
+      "min": 9,
+      "max": 20
     },
     "relationShip": "其他办公室职员",
     "proSkill": [
@@ -3005,8 +3005,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 20,
-      "min": 80
+      "min": 20,
+      "max": 80
     },
     "relationShip": "旧时大学同学，共济会和其他兄弟会组织，地方和联邦政府，媒体和销售人员",
     "proSkill": [
@@ -3031,8 +3031,8 @@
       "mag2": 2
     },
     "belief": {
-      "max": 0,
-      "min": 30
+      "min": 0,
+      "max": 30
     },
     "relationShip": "宗教或兄弟会团体，新闻媒体",
     "proSkill": [
@@ -3056,8 +3056,8 @@
       "mag2": 0
     },
     "belief": {
-      "max": 9,
-      "min": 40
+      "min": 9,
+      "max": 40
     },
     "relationShip": "科学家，环保主义者",
     "proSkill": [

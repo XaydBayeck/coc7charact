@@ -6,7 +6,8 @@ import kotlinx.serialization.Serializable
 data class CharacterData(
         val chInfo: ChInform,
         val chAttr: ChAttr,
-        val attr: Attr
+        val attr: Attr,
+        val damageAndBody: DamageAndBody
 ) {
     @Serializable
     data class ChAttr(
@@ -17,7 +18,8 @@ data class CharacterData(
             val app: Int,
             val edu: Int,
             val int: Int,
-            val pow: Int
+            val pow: Int,
+            val mov: Int
     )
 
     @Serializable
@@ -26,7 +28,7 @@ data class CharacterData(
             val plName: String,
             val pcName: String,
             val sex: String,
-            val job: String,
+            val job: Job,
             val age: Int,
             val center: String,
             val addr: String,
@@ -42,6 +44,19 @@ data class CharacterData(
             val san: Int,
             val luck: Int
     )
+
+    @Serializable
+    data class DamageAndBody(
+            val damagePlusValue:DamagePlusValue,
+            val body:Int
+    ){
+        @Serializable
+        data class DamagePlusValue(
+                val fixed:Int,
+                val diceNum:Int,
+                val diceFace:Int
+        )
+    }
 
 }
 
