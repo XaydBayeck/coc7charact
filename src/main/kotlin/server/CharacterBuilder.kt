@@ -9,6 +9,7 @@ class CharacterBuilder {
     private var attr=JsonObject()
     var information = JsonObject()
     var job=JsonObject()
+    var damageAndBody=JsonObject()
 
     fun addAttribute(_Attr:JsonObject){
         this.attribute=_Attr.getJsonObject("chAttr")
@@ -23,6 +24,8 @@ class CharacterBuilder {
         characterJson.append(this.attribute)
         characterJson.append(",\n\"attr\":")
         characterJson.append(this.attr)
+        characterJson.append(",\n\"damageAndBody\":")
+        characterJson.append(this.damageAndBody)
         characterJson.append("}")
         println(characterJson.toString())
         val characterData = Json.parse(CharacterData.serializer(), characterJson.toString())

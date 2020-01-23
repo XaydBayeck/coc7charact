@@ -10,19 +10,17 @@ class Character {
             field = value.copySelf()
         }
 
-
     private var chAttr: ChAttr = ChAttr()
         set(value) {
             field = value.copySelf()
         }
-
 
     private var attr: Attr = Attr()
         set(value) {
             field = value.copySelf()
         }
 
-    private var damageAndBody = CharacterData.DamageAndBody(CharacterData.DamageAndBody.DamagePlusValue(0, 0), 0)
+    private var damageAndBody = CharacterData.DamageAndBody(CharacterData.DamageAndBody.DamagePlusValue(0, 0,0), 0)
 
     constructor()
 

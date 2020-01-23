@@ -66,6 +66,17 @@ class CharacterBuilderTest {
         }
     """.trimIndent()
 
+    private val damageAndBody = """
+        {
+            "damagePlusValue":{
+                "fixed":0,
+                "diceNum":1,
+                "diceFace":4
+            },
+            "body":1
+        }
+    """.trimIndent()
+
     @UnstableDefault
     @Test
     fun characterBuilderTest() {
@@ -73,9 +84,11 @@ class CharacterBuilderTest {
 
         val attribute = JsonObject(this.attributes)
         val information = JsonObject(this.information)
+        val damageAndBody = JsonObject(this.damageAndBody)
 
         characterBuilder.addAttribute(attribute)
         characterBuilder.information = information
+        characterBuilder.damageAndBody = damageAndBody
 
         val character = characterBuilder.makeCharacter()
 

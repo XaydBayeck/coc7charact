@@ -32,10 +32,10 @@ class CharacterTest {
     "skillPoint": "教育 X 4"
   }
         """.trimIndent()
-        val job = Json.parse(Job.serializer(),jobJson)
+        val job = Json.parse(Job.serializer(), jobJson)
 
         val chInform = CharacterData.ChInform("sid", "sid", "man", job, 24, "2000s", "ChengDu", "GuiZhou")
-        val chAttr = CharacterData.ChAttr(70, 65, 75, 65, 70, 70, 70, 70,7)
+        val chAttr = CharacterData.ChAttr(70, 65, 75, 65, 70, 70, 70, 70, 7)
 
         val hp = (chAttr.siz + chAttr.con) / 10
         val mp = chAttr.pow / 5
@@ -43,7 +43,9 @@ class CharacterTest {
 
         val attr = CharacterData.Attr(hp, hp, mp, mp, san, 75)
 
-        val characterise = CharacterData(chInform, chAttr, attr)
+        val damageAndBody = CharacterData.DamageAndBody(CharacterData.DamageAndBody.DamagePlusValue(0, 1, 4), 1)
+
+        val characterise = CharacterData(chInform, chAttr, attr, damageAndBody)
 
         // serializing objects
         val jsonData = Json.stringify(CharacterData.serializer(), characterise)
@@ -83,6 +85,14 @@ class CharacterTest {
                     "mpm":14,
                     "san":70,
                     "luck":75
+                },
+                "damageAndBody":{
+                    "damagePlusValue":{
+                        "fixed":0,
+                        "diceNum":1,
+                        "diceFace":4
+                    },
+                    "body":1
                 }
             }
         """
@@ -91,13 +101,5 @@ class CharacterTest {
 
         val character = Character(characterData)
         println(character.toString())
-
-        val characterJson2 = """
-           {"chInfo":{"plName":"sid","pcName":"sid","sex":"男","job":$jobJson,"age":24,"center":"现代","addr":"ChengDu","home":"GuiZhou"},"chAttr":{"str":67,"con":87,"siz":56,"dex":76,"app":54,"int":65,"pow":64,"edu":76,"mov":9},"attr":{"hp":14,"hpm":14,"mp":12,"mpm":12,"san":64,"luck":65}} 
-        """
-        val characterData2 = Json.parse(CharacterData.serializer(), characterJson2)
-        println(characterData2)
-        val character2 = Character(characterData2)
-        println(character2.toString())
     }
 }

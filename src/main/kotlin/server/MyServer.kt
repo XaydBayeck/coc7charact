@@ -16,8 +16,7 @@ class MyServer(
         private val faviconPath: String
 ) : AbstractVerticle() {
 
-    private val kinds = arrayListOf("fonts", "stylesheet")
-    val characterBuilder=CharacterBuilder()
+    private val characterBuilder=CharacterBuilder()
 
     override fun start() {
         val vert= Vertx.vertx()
@@ -63,6 +62,9 @@ class MyServer(
             }
             "Job" -> {
                 this.characterBuilder.job=jsonObj
+            }
+            "damageAndBody" -> {
+                this.characterBuilder.damageAndBody=jsonObj
             }
         }
         req.response().end(jsonObj.encode())
