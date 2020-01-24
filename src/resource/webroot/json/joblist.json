@@ -1173,8 +1173,8 @@
     "profsPoint": {
       "skill1": "教育",
       "mag1": 2,
-      "skill2": "外貌或敏捷",
-      "orSkill2": "力量",
+      "skill2": "外貌",
+      "orSkill2": "敏捷",
       "mag2": 2
     },
     "belief": {
@@ -1192,7 +1192,7 @@
       "攀爬"
     ],
     "kind": "普通职业",
-    "skillPoint": "教育 X 2 + 外貌或敏捷/力量 X 2"
+    "skillPoint": "教育 X 2 + 外貌/敏捷 X 2"
   },
   {
     "name": "※私人司机",
@@ -1393,8 +1393,8 @@
     "profsPoint": {
       "skill1": "教育",
       "mag1": 2,
-      "skill2": "外貌或敏捷",
-      "orSkill2": "力量",
+      "skill2": "外貌",
+      "orSkill2": "敏捷",
       "mag2": 2
     },
     "belief": {
@@ -1413,7 +1413,7 @@
       "攀爬或游泳"
     ],
     "kind": "普通职业",
-    "skillPoint": "教育 X 2 + 外貌或敏捷/力量 X 2"
+    "skillPoint": "教育 X 2 + 外貌/敏捷 X 2"
   },
   {
     "name": "农民",
