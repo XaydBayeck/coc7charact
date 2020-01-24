@@ -2,113 +2,47 @@
 <html lang="zh">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>创造你的调查员</title>
-    <style type="text/css" media="screen">
-        @import url("stylesheet/fonts.css");
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #000000;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: column;
-        }
-
-        #body {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
-        #menu {
-            width: 100%;
-            border-bottom: 1px solid #13964e;
-            display: flex;
-        }
-
-        .logo {
-            padding: 10px;
-        }
-
-        .logo > a {
-            padding: 0;
-            color: #13964e;
-            font-family: 'RabbitsHole', serif;
-            font-size: 36px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .value > * {
-            display: inline;
-        }
-
-        #app,#job {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 40%;
-            align-items: center;
-        }
-
-        #app > *, #job > * {
-            color: #13964e;
-        }
-
-        button {
-            color: #13964e;
-        }
-
-        .jobSkill {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>创造你的调查员</title>
+  <link rel="stylesheet" href="stylesheet/Information.css">
 </head>
 
 <body>
-<div id="menu">
+  <div id="menu">
     <div class="logo">
-        <a class="logo" href="index.html">Call of Cthulhu</a>
+      <a class="logo" href="index.html">Call of Cthulhu</a>
     </div>
-</div>
-<div id="body">
+  </div>
+  <div id="body">
     <div id="app">
-        <div class="info" v-for="infor in infors">
-            <p class="name">{{ infor.name }}</p>
-            <label>
-                <input type="text" class="value" v-model="infor.value">
-            </label>
-        </div>
-        <button @click="submit">提交</button>
+      <div class="info" v-for="infor in infors">
+        <p class="name">{{ infor.name }}:</p>
+        <label>
+          <input type="text" class="value" v-model="infor.value">
+        </label>
+      </div>
+      <button @click="submit"><span></span>
+        <div>提交</div><span></span>
+      </button>
     </div>
     <div id="job">
-        <p class="jobName">{{ job.name }}</p>
-        <p class="description">{{ job.description }}</p>
-        <p class="skillPoint">本职技能点: {{ job.skillPoint }}</p>
-        <p class="belief">信誉范围: {{ job.belief.max }} ~ {{ job.belief.min }}</p>
-        <p class="relationship">推荐关系人: {{ job.relationShip }}</p>
-        <div class="jobSkill">
-            <p>本职技能: |</p>
-            <p v-for="skill in job.proSkill">{{ skill }}| </p>
-        </div>
+      <p class="jobName">{{ job.name }}</p>
+      <p class="description">{{ job.description }}</p>
+      <p class="skillPoint">本职技能点: {{ job.skillPoint }}</p>
+      <p class="belief">信誉范围: {{ job.belief.max }} ~ {{ job.belief.min }}</p>
+      <p class="relationship">推荐关系人: {{ job.relationShip }}</p>
+      <div class="jobSkill">
+        <p>本职技能: |</p>
+        <p v-for="skill in job.proSkill">{{ skill }}| </p>
+      </div>
     </div>
     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
     <script src="javascripts/Information.js"></script>
-</div>
+  </div>
 </body>
 
 </html>

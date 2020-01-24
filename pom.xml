@@ -4,8 +4,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jetbrains.kotlin.examples</groupId>
-    <artifactId>KtServelet</artifactId>
+    <groupId>work.moira.server.coc7character</groupId>
+    <artifactId>coc7character</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <repositories>
@@ -31,7 +31,7 @@
         <kotlin.version>1.3.61</kotlin.version>
         <junit.version>4.12</junit.version>
         <serialization.version>0.13.0</serialization.version>
-        <main.class>server.testServelet</main.class>
+        <main.class>server.MyServerKt</main.class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
