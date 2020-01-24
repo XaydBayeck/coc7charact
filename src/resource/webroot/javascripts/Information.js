@@ -1,30 +1,5 @@
-function levelCheck(nums, target) {
-    let level = 0;
-    nums = nums || 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (target < nums[i]) {
-            level = i;
-            break;
-        }
-    }
-    return level;
-}
-
-function ranger(attr) {
-    const nums = attr.nums;
-    return levelCheck(nums, attr.value)
-}
-
-function rollDice(num, dice, plus = 0) {
-    let sum = plus;
-    for (let i = 0; i < num; i++) {
-        sum += parseInt(Math.random() * dice + 1, 10);
-    }
-    return sum;
-}
-
-const app = new Vue({
-    el: "#app",
+const information = new Vue({
+    el: "#information",
     data: {
         infors: [
             {
@@ -122,12 +97,12 @@ const jobVue = new Vue({
     }
 });
 
-const appDOM = document.getElementById("app");
+const appDOM = document.getElementById("information");
 const age = appDOM.children[4];
 const ageHTML=age.children[1].childNodes[0];
 age.removeChild(age.childNodes[1]);
-const ageOutHTML = "<p class='name'>年龄</p><div class='input'><button class='dec' onclick='app.sub();'><span></span><div>-</div>" +
-    "</button><label id='age'></label><button class='add' onclick='app.add();'><div>+</div><span></span></button></div>";
+const ageOutHTML = "<p class='name'>年龄</p><div class='input'><button class='dec' onclick='information.sub();'><span></span><div>-</div>" +
+    "</button><label id='age'></label><button class='add' onclick='information.add();'><div>+</div><span></span></button></div>";
 age.innerHTML = ageOutHTML;
 age.children[1].childNodes[1].appendChild(ageHTML);
 age.type = "number";

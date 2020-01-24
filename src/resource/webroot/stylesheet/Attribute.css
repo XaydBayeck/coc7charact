@@ -50,7 +50,7 @@ body {
   text-align: center;
 }
 
-#app {
+#Attribute {
   display: flex;
   flex-direction:column;
 }
@@ -60,7 +60,7 @@ body {
   justify-content: space-around;
 }
 
-#app > * {
+#Attribute > * {
     color: #13964e;
 }
 

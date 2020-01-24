@@ -5,8 +5,8 @@ import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 
 class CharacterBuilder {
-    private var attribute = JsonObject()
-    private var attr=JsonObject()
+    var attribute = JsonObject()
+    var attr=JsonObject()
     var information = JsonObject()
     var job=JsonObject()
     var damageAndBody=JsonObject()

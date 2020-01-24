@@ -23,8 +23,8 @@ function rollDice(num, dice, plus = 0) {
     return sum;
 }
 
-const app = new Vue({
-    el: "#app",
+const Attribute = new Vue({
+    el: "#Attribute",
     data: {
         attrs: [
             {

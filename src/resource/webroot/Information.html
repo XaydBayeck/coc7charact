@@ -16,7 +16,7 @@
     </div>
   </div>
   <div id="body">
-    <div id="app">
+    <div id="information">
       <div class="info" v-for="infor in infors">
         <p class="name">{{ infor.name }}:</p>
         <label :class="infor.name">
@@ -36,6 +36,11 @@
       <div class="jobSkill">
         <p>本职技能: |</p>
         <p v-for="skill in job.proSkill">{{ skill }}| </p>
+      </div>
+    </div>
+    <div class="kill">
+      <div class="skillpoint">
+
       </div>
     </div>
     <!-- 开发环境版本，包含了有帮助的命令行警告 -->

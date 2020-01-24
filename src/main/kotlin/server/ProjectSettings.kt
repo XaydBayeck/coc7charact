@@ -5,7 +5,7 @@ import java.util.Properties
 
 /**
  * @title: ProjectSettings
- * @projectName KtServelet
+ * @projectName coc7character
  * @description: TODO
  * @author sid
  * @date 2019/11/2下午11:01

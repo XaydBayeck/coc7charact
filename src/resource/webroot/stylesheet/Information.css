@@ -45,14 +45,14 @@ body {
     display: inline;
 }
 
-#app, #job {
+#information, #job {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 40%;
 }
 
-#app > *, #job > * {
+#information > *, #job > * {
     color: #13964e;
 }
 

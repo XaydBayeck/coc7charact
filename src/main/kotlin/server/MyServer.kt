@@ -3,6 +3,7 @@ package server
 import io.vertx.core.AbstractVerticle
 import io.vertx.core.Handler
 import io.vertx.core.Vertx
+import io.vertx.core.json.JsonObject
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.RoutingContext
 import io.vertx.ext.web.handler.BodyHandler
@@ -16,10 +17,10 @@ class MyServer(
         private val faviconPath: String
 ) : AbstractVerticle() {
 
-    private val characterBuilder=CharacterBuilder()
+    private val characterBuilder = CharacterBuilder()
 
     override fun start() {
-        val vert= Vertx.vertx()
+        val vert = Vertx.vertx()
 
         val router = createRouter(vert)
 
@@ -28,13 +29,14 @@ class MyServer(
         println("Server is starting in port $port")
     }
 
-    private fun createRouter(vert:Vertx) = Router.router(vert).apply {
+    private fun createRouter(vert: Vertx) = Router.router(vert).apply {
         route().handler(BodyHandler.create())
         route().handler(FaviconHandler.create(faviconPath))
         post("/post/character/:part").handler(characterPostHandler)
         get("/").handler(myRootHandler)
+        get("/get/character/:part").handler(characterGetHandler)
         route("/static/*").handler(StaticHandler.create().setWebRoot(webPath))
-        errorHandler(404,myFailureHandler)
+        errorHandler(404, myFailureHandler)
     }
 
     // Handlers
@@ -50,24 +52,60 @@ class MyServer(
     }
 
     private val characterPostHandler = Handler<RoutingContext> { req ->
-        println("POST the Attribute")
         val part = req.pathParam("part")
+        println("POST the character $part")
         val jsonObj = req.bodyAsJson
         when (part) {
             "Attribute" -> {
                 this.characterBuilder.addAttribute(jsonObj)
             }
             "Information" -> {
-                this.characterBuilder.information=jsonObj
+                this.characterBuilder.information = jsonObj
             }
             "Job" -> {
-                this.characterBuilder.job=jsonObj
+                this.characterBuilder.job = jsonObj
             }
             "damageAndBody" -> {
-                this.characterBuilder.damageAndBody=jsonObj
+                this.characterBuilder.damageAndBody = jsonObj
             }
         }
         req.response().end(jsonObj.encode())
+    }
+
+    private val characterGetHandler = Handler<RoutingContext> { req ->
+        val part = req.pathParam("part")
+        println("GET the character $part")
+        val jsonObj = when (part) {
+            "Attribute" -> {
+                val attribute = this.characterBuilder.attribute
+                val attr = this.characterBuilder.attr
+                val json = JsonObject().apply {
+                    put("chAttr",attribute)
+                    put("attr",attr)
+                }
+                json
+            }
+            "Information" -> {
+                this.characterBuilder.information
+            }
+            "Job" -> {
+                this.characterBuilder.job
+            }
+            "damageAndBody" -> {
+                this.characterBuilder.damageAndBody
+            }
+            else -> {
+                null
+            }
+        }
+        if (jsonObj == null) {
+            req.response()
+                    .putHeader("content-type", "text/plain")
+                    .statusCode = 404
+            req.response().end("Character's $part is not found!")
+        } else {
+            req.response().end(jsonObj.encode())
+        }
     }
 
 }
