@@ -19,7 +19,7 @@
     <div id="app">
       <div class="info" v-for="infor in infors">
         <p class="name">{{ infor.name }}:</p>
-        <label>
+        <label :class="infor.name">
           <input type="text" class="value" v-model="infor.value">
         </label>
       </div>
@@ -39,8 +39,10 @@
       </div>
     </div>
     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<!--    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>-->
+    <script src="javascripts/vue.js"></script>
+    <script src="javascripts/axios.min.js"></script>
     <script src="javascripts/Information.js"></script>
   </div>
 </body>

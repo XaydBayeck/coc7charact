@@ -1,4 +1,3 @@
-
 @import url("fonts.css");
 
 * {
@@ -46,7 +45,7 @@ body {
     display: inline;
 }
 
-#app,#job {
+#app, #job {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -58,45 +57,78 @@ body {
 }
 
 button {
-  background-color: black;
-  border:none;
-  color:black;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
+    background-color: black;
+    border: none;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
-button > span{
-  background-color: #13964e;
-  width: 12px;
-  height: 20px;
+button > span {
+    background-color: #13964e;
+    width: 15px;
+    height: 100%;
 }
 
 button > span:first-child {
-  border-radius: 50% 0 0 50%;
+    border-radius: 50% 0 0 50%;
 }
 
 button > span:last-child {
-  border-radius: 0 50% 50% 0;
+    border-radius: 0 50% 50% 0;
 }
 
 button > div {
-  background-color: #13964e;
-  color: black;
+    background-color: #13964e;
+    color: black;
+}
+
+.dec > div {
+    border-right: 12px solid #13964e;
+}
+
+.add > div {
+    border-left: 12px solid #13964e;
 }
 
 .info {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-input,select {
-  border-width: 0 0 0 0;
-  outline: none;
-  background-color: transparent;
-  color: #13964e;
-  border-bottom: 1px solid #13964e00;
-  text-align: center;
+input, select {
+    border-width: 0 0 0 0;
+    outline: none;
+    background-color: transparent;
+    color: #13964e;
+    border-bottom: 1px solid #114c26;
+    text-align: center;
+    -webkit-appearance: textfield;
+}
+
+input:focus, select:focus {
+    border-bottom-color: #15c76f;
+}
+
+#jobInput:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #13964e;
+    display: inline-block;
+    transform: rotate(45deg);
+}
+
+.input {
+    display: flex;
+}
+
+.input input {
+    width: 9em;
 }
 
 .jobSkill {

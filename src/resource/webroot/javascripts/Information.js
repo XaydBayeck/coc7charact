@@ -83,6 +83,12 @@ const app = new Vue({
                 });
             // TODO 添加下一个页面
             location.href = "#"
+        },
+        sub: function () {
+            this.infors[4].value --;
+        },
+        add: function () {
+            this.infors[4].value ++;
         }
     }
 });
@@ -117,14 +123,21 @@ const jobVue = new Vue({
 });
 
 const appDOM = document.getElementById("app");
-const age = appDOM.children[4].children[1].children[0];
+const age = appDOM.children[4];
+const ageHTML=age.children[1].childNodes[0];
+age.removeChild(age.childNodes[1]);
+const ageOutHTML = "<p class='name'>年龄</p><div class='input'><button class='dec' onclick='app.sub();'><span></span><div>-</div>" +
+    "</button><label id='age'></label><button class='add' onclick='app.add();'><div>+</div><span></span></button></div>";
+age.innerHTML = ageOutHTML;
+age.children[1].childNodes[1].appendChild(ageHTML);
 age.type = "number";
 age.min = 0;
 
-let job = appDOM.children[3].children[1];
-job.removeChild(job.childNodes[0]);
+let job = appDOM.children[3];
+job.removeChild(job.childNodes[1]);
 
-const jobHTML = "<select v-model='selectJob' name='job' id='jobSelect' @change='update()'><option :value='job.name' v-for='job in jobList'>{{ job.name }}</option></select>";
+const jobHTML = "<p class='name'>职业</p><label id='jobInput'><select v-model='selectJob' name='job' id='jobSelect' " +
+    "@change='update()'><option :value='job.name' v-for='job in jobList'>{{ job.name }}</option></select></label>";
 job.innerHTML = jobHTML;
 
 const jobSelect = new Vue({

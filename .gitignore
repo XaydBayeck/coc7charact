@@ -1,11 +1,10 @@
 target
 .idea
 .settings
-src/web/less.js-master
 .classpath
 .project
 coc7charact.iml
-src/web/node_modules/
 src/resource/mad.jpg
 src/resource/call of Ctulhu.jpg
-/coc7charact.iml
+src/resource/webroot/javascripts/vue.js
+src/resource/webroot/javascripts/axios.min.js
