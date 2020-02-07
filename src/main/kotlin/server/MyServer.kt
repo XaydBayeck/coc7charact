@@ -107,7 +107,6 @@ class MyServer(
             req.response().end(jsonObj.encode())
         }
     }
-
 }
 
 fun main() {
