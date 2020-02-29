@@ -2,112 +2,153 @@
 <html lang="zh">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>创造你的调查员</title>
-  <link rel="stylesheet" href="stylesheet/character.css">
-  <link rel="stylesheet" href="stylesheet/Attribute.css">
-  <link rel="stylesheet" href="stylesheet/Information.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创造你的调查员</title>
+    <link rel="stylesheet" href="stylesheet/character.css">
+    <link rel="stylesheet" href="stylesheet/Attribute.css">
+    <link rel="stylesheet" href="stylesheet/Information.css">
 </head>
 
 <body>
-  <div id="menu">
+<div id="menu">
     <div class="logo">
-      <a class="logo" href="index.html">Call of Cthulhu</a>
+        <a class="logo" href="index.html">Call of Cthulhu</a>
     </div>
-  </div>
-  <div id="Attribute">
+</div>
+
+<div id="Attribute">
     <div id="div1">
-      <div class="attrs">
-        <div class="attr" v-for="attr in attrs">
-          <div class="name">{{ attr.name }}</div>
-          <div class="value">
-            <button class="dec" @click="sub(attr)"><span></span>
-              <div>-</div>
+        <div class="attrs">
+            <div class="attr" v-for="attr in attrs">
+                <div class="name">{{ attr.name }}</div>
+                <div class="value">
+                    <button class="dec" @click="sub(attr)"><span></span>
+                        <div>-</div>
+                    </button>
+                    <p>{{ attr.value }}</p>
+                    <button class="add" @click="add(attr)">
+                        <div>+</div>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="mov">
+                <div class="name">移动</div>
+                <div class="value">{{ moveValue }}</div>
+            </div>
+            <button @click="rollAttrs"><span></span>
+                <div>随机属性</div>
+                <span></span>
             </button>
-            <p>{{ attr.value }}</p>
-            <button class="add" @click="add(attr)">
-              <div>+</div><span></span>
-            </button>
-          </div>
         </div>
-        <div class="mov">
-          <div class="name">移动</div>
-          <div class="value">{{ moveValue }}</div>
+        <div id="dscr">
+            <h4>你的人物特征</h4>
+            <ul>
+                <li v-for="attr in attrs">{{ attr.currentText }}</li>
+            </ul>
         </div>
-        <button @click="rollAttrs"><span></span>
-          <div>随机属性</div><span></span>
-        </button>
-      </div>
-      <div id="dscr">
-        <h4>你的人物特征</h4>
-        <ul>
-          <li v-for="attr in attrs">{{ attr.currentText }}</li>
-        </ul>
-      </div>
-      <div class="attr">
-        <div id="attrs2">
-          <div class="attr" v-for="attr in attrs2">
-            <div class="name">{{ attr.name }}: </div>
-            <div class="value">{{ attr.value }}</div>
-          </div>
-          <button @click="rollLucky"><span></span>
-            <div>试试运气</div><span></span>
-          </button>
+        <div class="attr">
+            <div id="attrs2">
+                <div class="attr" v-for="attr in attrs2">
+                    <div class="name">{{ attr.name }}:</div>
+                    <div class="value">{{ attr.value }}</div>
+                </div>
+                <button @click="rollLucky"><span></span>
+                    <div>试试运气</div>
+                    <span></span>
+                </button>
+            </div>
+            <div id="damage">
+                <div class="attr">
+                    <div class="name">伤害加值：</div>
+                    <div class="value">{{ dbPlusValue }}</div>
+                </div>
+                <div class="attr">
+                    <div class="name">体格：</div>
+                    <div class="value">{{ damageAndBody.body }}</div>
+                </div>
+            </div>
         </div>
-        <div id="damage">
-          <div class="attr">
-            <div class="name">伤害加值：</div>
-            <div class="value">{{ dbPlusValue }}</div>
-          </div>
-          <div class="attr">
-            <div class="name">体格：</div>
-            <div class="value">{{ damageAndBody.body }}</div>
-          </div>
-        </div>
-      </div>
     </div>
     <button @click="submit" style="color:black;" id="submit"><span></span>
-      <div>提交</div><span></span>
+        <div>提交</div>
+        <span></span>
     </button>
-  </div>
-  <div id="body">
+</div>
+
+<div id="ageConfirm" v-show="isShow">
+    <div id="less19" v-if="show15">
+        <div class="name">力量和体型合计减少</div>
+        <div class="value">{{ change[1] }}</div>
+        <div class="name">教育减少</div>
+        <div class="value">{{ change[2] }}</div>
+        <div class="name">决定幸运值时可以骰2次并取较好的一次</div>
+    </div>
+    <div id="big" v-else>
+        <button style="color:black;" id="EDURaise" v-show="showEDURaise">
+            <span></span>
+            <div>对教育进行{{ EDURaise }}次增强鉴定</div>
+            <span></span></button>
+        <div class="name">力量、体质和敏捷合计减少</div>
+        <div class="value">{{ decNum }}</div>
+        <div id="distribution" v-for="attr in changeAttrs">
+            <div class="name">{{ attr.name }}</div>
+            <div class="value">
+                <button class="dec" @click="sub(attr)"><span></span>
+                    <div>-</div>
+                </button>
+                <p>{{ attr.value }}</p>
+                <button class="add" @click="add(attr)">
+                    <div>+</div>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="name">外貌减少</div>
+        <div class="value">{{ change[2] }}</div>
+    </div>
+</div>
+
+<div id="body">
     <div id="information">
-      <div class="info" v-for="infor in infors">
-        <p class="name">{{ infor.name }}:</p>
-        <label :class="infor.name">
-          <input type="text" class="value" v-model="infor.value">
-        </label>
-      </div>
-      <button @click="submit"><span></span>
-        <div>提交</div><span></span>
-      </button>
+        <div class="info" v-for="infor in infors">
+            <p class="name">{{ infor.name }}:</p>
+            <label :class="infor.name">
+                <input type="text" class="value" v-model="infor.value">
+            </label>
+        </div>
+        <button @click="submit"><span></span>
+            <div>提交</div>
+            <span></span>
+        </button>
     </div>
     <div id="job">
-      <p class="jobName">{{ job.name }}</p>
-      <p class="description">{{ job.description }}</p>
-      <p class="skillPoint">本职技能点: {{ job.skillPoint }}</p>
-      <p class="belief">信誉范围: {{ job.belief.max }} ~ {{ job.belief.min }}</p>
-      <p class="relationship">推荐关系人: {{ job.relationShip }}</p>
-      <div class="jobSkill">
-        <p>本职技能: |</p>
-        <p v-for="skill in job.proSkill">{{ skill }}| </p>
-      </div>
+        <p class="jobName">{{ job.name }}</p>
+        <p class="description">{{ job.description }}</p>
+        <p class="skillPoint">本职技能点: {{ job.skillPoint }}</p>
+        <p class="belief">信誉范围: {{ job.belief.max }} ~ {{ job.belief.min }}</p>
+        <p class="relationship">推荐关系人: {{ job.relationShip }}</p>
+        <div class="jobSkill">
+            <p>本职技能: |</p>
+            <p v-for="skill in job.proSkill">{{ skill }}| </p>
+        </div>
     </div>
     <div class="kill">
-      <div class="skillpoint">
+        <div class="skillpoint">
 
-      </div>
+        </div>
     </div>
-  </div>
-  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
-  <!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
-  <!--    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>-->
-  <script src="javascripts/vue.js"></script>
-  <script src="javascripts/axios.min.js"></script>
-  <script src="javascripts/Information.js"></script>
-  <script src="javascripts/Attribute.js"></script>
+</div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<!--    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>-->
+<script src="javascripts/vue.js"></script>
+<script src="javascripts/axios.min.js"></script>
+<script src="javascripts/Information.js"></script>
+<script src="javascripts/Attribute.js"></script>
+<script src="javascripts/ageConfirm.js"></script>
 </body>
 
 </html>
