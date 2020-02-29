@@ -1,3 +1,62 @@
+
+function confirm(enable) {
+    Attribute.showButton = enable;
+    information.showButton = enable;
+    const decButton = age.children[1].children[0];
+    const addButton = age.children[1].children[2];
+    decButton.style.display = enable ? "" : "none";
+    addButton.style.display = enable ? "" : "none";
+    ageConfirm.isShow = !enable;
+}
+
+function configChange() {
+    const age = information.infors[4].value;
+    let changes;
+    if (age >= 15) {
+        ageConfirm.bigger15 = true;
+        if (age < 20) {
+            changes = [0, 5, 5];
+            const edu = Attribute.attrs[7];
+            const changeNum = edu.value - changes[2];
+            edu.value = changeNum > 0 ? changeNum : 0;
+            Attribute.luckyTimes +=  1;
+        } else {
+            if (age < 40) {
+                changes = [1, 0, 0];
+            } else if (age < 50) {
+                changes = [2, 5, 5];
+            } else if (age < 60) {
+                changes = [3, 10, 10];
+            } else if (age < 70) {
+                changes = [4, 20, 15];
+            } else if (age < 80) {
+                changes = [4, 40, 20];
+            } else if (age < 90) {
+                changes = [4, 80, 25];
+            } else {
+                ageConfirm.bigger15 = false;
+                changes = [0, 0, 0];
+            }
+        }
+        const app = Attribute.attrs[4];
+        const changeNum = app.value - changes[2];
+        app.value = changeNum > 0 ? changeNum : 0;
+    } else {
+        ageConfirm.bigger15 = false;
+        changes = [0, 0, 0];
+    }
+
+    ageConfirm.change = changes;
+
+    ageConfirm.changeAttrs[0].before = Attribute.attrs[0].value;
+    ageConfirm.changeAttrs[1].before = Attribute.attrs[1].value;
+    ageConfirm.changeAttrs[2].before = Attribute.attrs[3].value;
+
+    ageConfirm.changeAttrs[0].value = 0;
+    ageConfirm.changeAttrs[1].value = 0;
+    ageConfirm.changeAttrs[2].value = 0;
+}
+
 const information = new Vue({
     el: "#information",
     data: {
@@ -34,7 +93,8 @@ const information = new Vue({
                 name: "故乡",
                 value: "阿斯特拉"
             }
-        ]
+        ],
+        showButton: true
     },
     methods: {
         submit: function () {
@@ -56,17 +116,36 @@ const information = new Vue({
                 .catch(function (error) {
                     console.log(error);
                 });
-            // TODO 添加下一个页面
-            location.href = "#"
+
+            confirm(false);
+            configChange();
         },
         sub: function () {
             this.infors[4].value --;
         },
         add: function () {
             this.infors[4].value ++;
+        },
+        reEdit: function () {
+            confirm(true);
+            const age = information.infors[4].value;
+            if (age<20) {
+                Attribute.attrs[7].value += 5;
+            } else {
+                const changeApp = ageConfirm.change[2];
+                Attribute.attrs[4].value += changeApp;
+            }
+
+            Attribute.attrs[0].value = ageConfirm.changeAttrs[0].before;
+            Attribute.attrs[1].value = ageConfirm.changeAttrs[1].before;
+            Attribute.attrs[3].value = ageConfirm.changeAttrs[2].before;
+
+            Attribute.luckyTimes = 1;
+            Attribute.attrs2[3].value = 0;
         }
     }
 });
+
 
 const defineSelf = {
     "name": "自定义",

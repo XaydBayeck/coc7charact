@@ -10,7 +10,7 @@ class SkillTest {
     @ImplicitReflectionSerializer
     @Test
     fun testSkill() {
-        val jsonPath = "src/resource/skill.json"
+        val jsonPath = "src/resource/webroot/json/skill.json"
         var jsonList = ""
         File(jsonPath).forEachLine(action = {
             jsonList += it

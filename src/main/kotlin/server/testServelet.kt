@@ -53,7 +53,7 @@ class GetHandler : HttpHandler {
 
     fun doGet(url: String): String {
 
-        val path = "src/web$url"
+        val path = "src/resource/webroot$url"
         println(path)
         var tmp = ""
         File(path).forEachLine(action = { s ->

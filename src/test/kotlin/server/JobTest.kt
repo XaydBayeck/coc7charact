@@ -11,7 +11,7 @@ class JobTest {
     @Test
     fun jobTest() {
 
-        val jsonPath = "src/resource/joblist.json"
+        val jsonPath = "src/resource/webroot/json/joblist.json"
         var jsonList = ""
         File(jsonPath).forEachLine(action = {
             jsonList += it

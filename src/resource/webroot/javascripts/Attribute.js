@@ -12,7 +12,7 @@ function levelCheck(nums, target) {
 
 function ranger(attr) {
     const nums = attr.nums;
-    return levelCheck(nums, attr.value)
+    return levelCheck(nums, attr.value);
 }
 
 function rollDice(num, dice, plus = 0) {
@@ -26,6 +26,7 @@ function rollDice(num, dice, plus = 0) {
 const Attribute = new Vue({
     el: "#Attribute",
     data: {
+        showButton:true,
         attrs: [
             {
                 name: "力量(STR)",
@@ -194,7 +195,8 @@ const Attribute = new Vue({
                     return rollDice(3, 6, 0) * 5;
                 }
             }
-        ]
+        ],
+        luckyTimes:1
     },
     methods: {
         update: function (attr) {
@@ -224,7 +226,10 @@ const Attribute = new Vue({
             }
         },
         rollLucky: function () {
-            this.attrs2[3].value = this.attrs2[3].roll();
+            const newValue = this.attrs2[3].roll();
+            const luck = this.attrs2[3];
+            luck.value = newValue > luck.value ? newValue : luck.value;
+            this.luckyTimes -= 1;
         },
         submit: function () {
             const character = {
@@ -265,7 +270,7 @@ const Attribute = new Vue({
                     console.log(error);
                 });
 
-            location.href = "Information.html"
+            //location.href = "Information.html";
         }
     },
     computed: {
@@ -275,11 +280,11 @@ const Attribute = new Vue({
             const dex = this.attrs[3].value;
             let move;
             if (str < size && dex < size) {
-                move = 7
+                move = 7;
             } else if (str > size && dex > size) {
-                move = 9
+                move = 9;
             } else {
-                move = 8
+                move = 8;
             }
             return move;
         },

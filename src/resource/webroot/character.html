@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="stylesheet/character.css">
     <link rel="stylesheet" href="stylesheet/Attribute.css">
     <link rel="stylesheet" href="stylesheet/Information.css">
+    <link rel="stylesheet" href="stylesheet/ageConfirm.css">
 </head>
 
 <body>
@@ -24,11 +25,11 @@
             <div class="attr" v-for="attr in attrs">
                 <div class="name">{{ attr.name }}</div>
                 <div class="value">
-                    <button class="dec" @click="sub(attr)"><span></span>
+                    <button class="dec" @click="sub(attr)" v-show="showButton"><span></span>
                         <div>-</div>
                     </button>
                     <p>{{ attr.value }}</p>
-                    <button class="add" @click="add(attr)">
+                    <button class="add" @click="add(attr)" v-show="showButton">
                         <div>+</div>
                         <span></span>
                     </button>
@@ -38,7 +39,7 @@
                 <div class="name">移动</div>
                 <div class="value">{{ moveValue }}</div>
             </div>
-            <button @click="rollAttrs"><span></span>
+            <button @click="rollAttrs" v-show="showButton"><span></span>
                 <div>随机属性</div>
                 <span></span>
             </button>
@@ -55,7 +56,7 @@
                     <div class="name">{{ attr.name }}:</div>
                     <div class="value">{{ attr.value }}</div>
                 </div>
-                <button @click="rollLucky"><span></span>
+                <button @click="rollLucky" v-show="luckyTimes > 0"><span></span>
                     <div>试试运气</div>
                     <span></span>
                 </button>
@@ -72,43 +73,61 @@
             </div>
         </div>
     </div>
-    <button @click="submit" style="color:black;" id="submit"><span></span>
-        <div>提交</div>
-        <span></span>
-    </button>
+    <!-- <button @click="submit" style="color:black;" id="submit"><span></span>
+         <div>提交</div>
+         <span></span>
+         </button> -->
 </div>
 
+
 <div id="ageConfirm" v-show="isShow">
-    <div id="less19" v-if="show15">
-        <div class="name">力量和体型合计减少</div>
+    <div class="ageConfirm" v-show="bigger15">
+        <div class="name" v-if="show15">力量和体型合计减少</div>
+        <div class="name" v-else>力量、体质和敏捷合计减少</div>
         <div class="value">{{ change[1] }}</div>
-        <div class="name">教育减少</div>
-        <div class="value">{{ change[2] }}</div>
-        <div class="name">决定幸运值时可以骰2次并取较好的一次</div>
-    </div>
-    <div id="big" v-else>
-        <button style="color:black;" id="EDURaise" v-show="showEDURaise">
-            <span></span>
-            <div>对教育进行{{ EDURaise }}次增强鉴定</div>
-            <span></span></button>
-        <div class="name">力量、体质和敏捷合计减少</div>
-        <div class="value">{{ decNum }}</div>
+
         <div id="distribution" v-for="attr in changeAttrs">
-            <div class="name">{{ attr.name }}</div>
-            <div class="value">
-                <button class="dec" @click="sub(attr)"><span></span>
-                    <div>-</div>
-                </button>
-                <p>{{ attr.value }}</p>
-                <button class="add" @click="add(attr)">
-                    <div>+</div>
-                    <span></span>
-                </button>
+            <div v-if="attr.show">
+                <div class="name">{{ attr.name }}减少</div>
+                <div class="value">
+                  <button class="dec" @click="sub(attr)" v-show="attr.value > 0"><span></span>
+                        <div>-</div>
+                    </button>
+                    <p>{{ attr.value }}</p>
+                    <button class="add" @click="add(attr)" v-show="sum < change[1]">
+                        <div>+</div>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="name">外貌减少</div>
+
+        <div class="name" v-if="show15">教育减少</div>
+        <div class="name" v-else>外貌减少</div>
         <div class="value">{{ change[2] }}</div>
+
+        <div class="name" v-if="show15">决定幸运值时可以骰2次并取较好的一次</div>
+
+        <button style="color:black;" v-show="change[0] > 0" @click="upperEDU()">
+            <span></span>
+            <div>对教育进行{{ change[0] }}次增强鉴定</div>
+            <span></span>
+        </button>
+
     </div>
+
+    <div class="ageConfirm" v-show="!bigger15">
+        <p> 年龄不得小于15岁或大于90岁！！！</p>
+    </div>
+
+    <button @click="submit()" v-if="confirm">
+        <span></span>
+        <div>
+            确认修改,前往选择技能 -》
+        </div>
+        <span></span>
+    </button>
+
 </div>
 
 <div id="body">
@@ -119,8 +138,12 @@
                 <input type="text" class="value" v-model="infor.value">
             </label>
         </div>
-        <button @click="submit"><span></span>
+        <button @click="submit" v-show="showButton"><span></span>
             <div>提交</div>
+            <span></span>
+        </button>
+        <button @click="reEdit" v-show="!showButton"><span></span>
+            <div>重新设置</div>
             <span></span>
         </button>
     </div>
