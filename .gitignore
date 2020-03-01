@@ -1,8 +1,10 @@
-target
+build
 .idea
 .settings
 .classpath
 .project
+.gradle
+gradle
 coc7charact.iml
 src/resource/mad.jpg
 src/resource/call of Ctulhu.jpg
