@@ -70,7 +70,7 @@ const ageConfirm = new Vue({
         },
         submit: function () {
             Attribute.submit();
-            location.href = "#";
+            location.href = "./skill.html";
         }
     }
 });
