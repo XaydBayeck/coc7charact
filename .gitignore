@@ -8,3 +8,4 @@ src/resource/mad.jpg
 src/resource/call of Ctulhu.jpg
 src/resource/webroot/javascripts/vue.js
 src/resource/webroot/javascripts/axios.min.js
+*.jar

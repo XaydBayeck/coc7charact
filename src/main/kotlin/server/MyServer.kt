@@ -35,6 +35,7 @@ class MyServer(
         post("/post/character/:part").handler(characterPostHandler)
         get("/").handler(myRootHandler)
         get("/get/character/:part").handler(characterGetHandler)
+        get("/character/:attribute").handler(characterAttributeHandle)
         route("/static/*").handler(StaticHandler.create().setWebRoot(webPath))
         errorHandler(404, myFailureHandler)
     }
@@ -105,6 +106,21 @@ class MyServer(
             req.response().end("Character's $part is not found!")
         } else {
             req.response().end(jsonObj.encode())
+        }
+    }
+
+    private val characterAttributeHandle = Handler<RoutingContext> { req ->
+        val attr = req.pathParam("attribute")
+        if (attr == "skillPoint") {
+            val profsPoint = characterBuilder.calculateProbesPoint()
+            val interestPoint = characterBuilder.calculateInterestPoint()
+            val json = JsonObject("""
+                {
+                    "profsPoint": $profsPoint,
+                    "interestPoint": $interestPoint
+                }
+            """.trimIndent())
+            req.response().end(json.encode())
         }
     }
 }

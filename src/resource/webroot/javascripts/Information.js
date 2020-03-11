@@ -205,6 +205,15 @@ const jobSelect = new Vue({
             const select = document.getElementById("jobSelect");
             const index = select.selectedIndex;
             jobVue.job = jobSelect.jobList[index];
+        },
+        submit: function () {
+            axios.post('/post/character/Job', this.selectJob)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     },
     mounted() {

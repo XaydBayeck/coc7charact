@@ -75,6 +75,16 @@ input:focus, select:focus {
     justify-content: center;
 }
 
+.descripdiv {
+    position: fixed;
+    width: 50%;
+    background-color: black;
+}
+
+.descripdiv > * {
+    text-align: initial;
+}
+
 .beforeS {
     height: 21px;
     width: 21px;
