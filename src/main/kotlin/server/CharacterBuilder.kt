@@ -1,7 +1,6 @@
 package server
 
 import io.vertx.core.json.JsonObject
-import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 
 class CharacterBuilder {
@@ -40,7 +39,6 @@ class CharacterBuilder {
         this.attr = _Attr.getJsonObject("attr")
     }
 
-    @UnstableDefault
     fun makeCharacter(): Character {
         val characterJson = StringBuffer("{\n\"chInfo\":")
         characterJson.append(this.information)
@@ -52,7 +50,7 @@ class CharacterBuilder {
         characterJson.append(this.damageAndBody)
         characterJson.append("}")
         println(characterJson.toString())
-        val characterData = Json.parse(CharacterData.serializer(), characterJson.toString())
+        val characterData = Json.decodeFromString(CharacterData.serializer(), characterJson.toString())
         return Character(characterData)
     }
 

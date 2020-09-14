@@ -1,12 +1,10 @@
 package server
 
-import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.*
+import kotlinx.serialization.builtins.ListSerializer
 import org.junit.Test
 
 class CharacterTest {
-    @UnstableDefault
     @Test
     fun characterTest() {
         val jobJson = """
@@ -32,7 +30,7 @@ class CharacterTest {
     "skillPoint": "教育 X 4"
   }
         """.trimIndent()
-        val job = Json.parse(Job.serializer(), jobJson)
+        val job = Json.decodeFromString(Job.serializer(), jobJson)
 
         val chInform = CharacterData.ChInform("sid", "sid", "man", job, 24, "2000s", "ChengDu", "GuiZhou")
         val chAttr = CharacterData.ChAttr(70, 65, 75, 65, 70, 70, 70, 70, 7)
@@ -48,9 +46,9 @@ class CharacterTest {
         val characterise = CharacterData(chInform, chAttr, attr, damageAndBody)
 
         // serializing objects
-        val jsonData = Json.stringify(CharacterData.serializer(), characterise)
+        val jsonData = Json.encodeToString(CharacterData.serializer(), characterise)
         // serializing lists
-        val jsonList = Json.stringify(CharacterData.serializer().list, listOf(characterise))
+        val jsonList = Json.encodeToString(ListSerializer(CharacterData.serializer()), listOf(characterise))
 
         println(jsonData)
         println(jsonList)
@@ -96,7 +94,7 @@ class CharacterTest {
                 }
             }
         """
-        val characterData = Json.parse(CharacterData.serializer(), characterJson)
+        val characterData = Json.decodeFromString(CharacterData.serializer(), characterJson)
         println(characterData)
 
         val character = Character(characterData)

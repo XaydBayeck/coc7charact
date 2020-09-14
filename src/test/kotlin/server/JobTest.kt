@@ -1,13 +1,11 @@
 package server
 
-import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.parseList
 import org.junit.Test
 import java.io.File
 
 class JobTest {
-    @ImplicitReflectionSerializer
     @Test
     fun jobTest() {
 

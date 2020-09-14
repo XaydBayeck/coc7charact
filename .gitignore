@@ -1,6 +1,6 @@
 target
 .idea
-.settings
+/.settings/
 .classpath
 .project
 coc7charact.iml

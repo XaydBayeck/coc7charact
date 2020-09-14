@@ -1,7 +1,6 @@
 package server
 
 import io.vertx.core.json.JsonObject
-import kotlinx.serialization.UnstableDefault
 import org.junit.Test
 
 class CharacterBuilderTest {
@@ -77,7 +76,6 @@ class CharacterBuilderTest {
         }
     """.trimIndent()
 
-    @UnstableDefault
     @Test
     fun characterBuilderTest() {
         val characterBuilder = CharacterBuilder()

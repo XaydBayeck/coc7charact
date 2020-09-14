@@ -1,13 +1,11 @@
 package server
 
-import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.parseList
 import org.junit.Test
 import java.io.File
 
 class SkillTest {
-    @ImplicitReflectionSerializer
     @Test
     fun testSkill() {
         val jsonPath = "src/resource/webroot/json/skill.json"

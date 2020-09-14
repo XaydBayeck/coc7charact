@@ -3,12 +3,10 @@ package server
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpHandler
 import com.sun.net.httpserver.HttpServer
-import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 import java.io.File
 import java.io.InputStreamReader
 import java.net.InetSocketAddress
-import kotlin.io.forEachLine as forEachLine
 
 fun main() {
     val server = HttpServer.create(InetSocketAddress(8989), 100)
@@ -20,7 +18,6 @@ fun main() {
 class GetHandler : HttpHandler {
     private val notfound = "<h1>404 Not Found</h1>No context found for request"
 
-    @UnstableDefault
     override fun handle(exchange: HttpExchange) {
 
         val method = exchange.requestMethod
@@ -63,7 +60,6 @@ class GetHandler : HttpHandler {
         return tmp
     }
 
-    @UnstableDefault
     fun doPost(isr: InputStreamReader): String {
         var returns = ""
         var tmp = isr.read()
@@ -73,7 +69,7 @@ class GetHandler : HttpHandler {
         }
         println(returns)
 
-        val characterData = Json.parse(CharacterData.serializer(), returns)
+        val characterData = Json.decodeFromString(CharacterData.serializer(), returns)
         val character = Character(characterData)
 
         return character.toHtml()
