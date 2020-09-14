@@ -25,11 +25,11 @@
             <div class="attr" v-for="attr in attrs">
                 <div class="name">{{ attr.name }}</div>
                 <div class="value">
-                    <button class="dec" @click="sub(attr)" v-show="showButton"><span></span>
+                    <button class="dec" @click="sub(attr, 1)" @click.ctrl="sub(attr, 9)" v-show="showButton"><span></span>
                         <div>-</div>
                     </button>
                     <p>{{ attr.value }}</p>
-                    <button class="add" @click="add(attr)" v-show="showButton">
+                    <button class="add" @click="add(attr, 1)" @click.ctrl="add(attr, 9)" v-show="showButton">
                         <div>+</div>
                         <span></span>
                     </button>

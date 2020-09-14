@@ -205,17 +205,17 @@ const Attribute = new Vue({
             this.attrs2[1].value = parseInt((this.attrs[6].value) / 5);
             this.attrs2[2].value = this.attrs[6].value;
         },
-        sub: function (attr) {
+        sub: function (attr, mag) {
             const index = this.attrs.indexOf(attr);
             if (this.attrs[index].value > 0) {
-                this.attrs[index].value--;
+                this.attrs[index].value -= mag;
             }
             this.update(attr);
         },
-        add: function (attr) {
+        add: function (attr, mag) {
             const index = this.attrs.indexOf(attr);
             if (this.attrs[index].value < 99) {
-                this.attrs[index].value++;
+                this.attrs[index].value += mag;
             }
             this.update(attr);
         },
@@ -239,9 +239,9 @@ const Attribute = new Vue({
                     "siz": this.attrs[2].value,
                     "dex": this.attrs[3].value,
                     "app": this.attrs[4].value,
-                    "edu": this.attrs[5].value,
-                    "int": this.attrs[6].value,
-                    "pow": this.attrs[7].value,
+                    "int": this.attrs[5].value,
+                    "pow": this.attrs[6].value,
+                    "edu": this.attrs[7].value,
                     "mov": this.moveValue
                 },
                 "attr": {
@@ -254,7 +254,7 @@ const Attribute = new Vue({
                 }
             };
             console.log(character);
-            axios.post('/post/character/attr', character)
+            axios.post('/post/character/Attribute', character)
                 .then(function (response) {
                     console.log(response);
                 })
@@ -262,7 +262,7 @@ const Attribute = new Vue({
                     console.log(error);
                 });
 
-            axios.post('/post/character/damageAndBody',this.damageAndBody)
+            axios.post('/post/character/DamageAndBody',this.damageAndBody)
                 .then(function (response) {
                     console.log(response);
                 })

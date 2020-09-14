@@ -56,14 +56,14 @@ class CharacterBuilder {
 
     private fun findAttr(attrName: String): Int {
         return when (attrName) {
-            "力量" -> attribute.getJsonObject("chAttr").getInteger("str")
-            "体质" -> attribute.getJsonObject("chAttr").getInteger("con")
-            "体型" -> attribute.getJsonObject("chAttr").getInteger("siz")
-            "敏捷" -> attribute.getJsonObject("chAttr").getInteger("dex")
-            "外貌" -> attribute.getJsonObject("chAttr").getInteger("app")
-            "教育" -> attribute.getJsonObject("chAttr").getInteger("edu")
-            "智力" -> attribute.getJsonObject("chAttr").getInteger("int")
-            "意志" -> attribute.getJsonObject("chAttr").getInteger("pow")
+            "力量" -> attribute.getInteger("str")
+            "体质" -> attribute.getInteger("con")
+            "体型" -> attribute.getInteger("siz")
+            "敏捷" -> attribute.getInteger("dex")
+            "外貌" -> attribute.getInteger("app")
+            "教育" -> attribute.getInteger("edu")
+            "智力" -> attribute.getInteger("int")
+            "意志" -> attribute.getInteger("pow")
             else -> 0
         }
     }
@@ -97,6 +97,6 @@ class CharacterBuilder {
     }
 
     fun calculateInterestPoint(): Int {
-        return findAttr("智力") * 4
+        return findAttr("智力") * 2
     }
 }

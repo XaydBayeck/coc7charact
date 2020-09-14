@@ -66,7 +66,7 @@ class MyServer(
             "Job" -> {
                 this.characterBuilder.job = jsonObj
             }
-            "damageAndBody" -> {
+            "DamageAndBody" -> {
                 this.characterBuilder.damageAndBody = jsonObj
             }
         }

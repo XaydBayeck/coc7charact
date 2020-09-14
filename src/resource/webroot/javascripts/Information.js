@@ -207,6 +207,10 @@ const jobSelect = new Vue({
             jobVue.job = jobSelect.jobList[index];
         },
         submit: function () {
+            // console.log(jobVue.job);
+            // console.log(jobVue.job.profsPoint);
+            this.selectJob = { "profsPoint": jobVue.job.profsPoint};
+            // console.log(this.selectJob);
             axios.post('/post/character/Job', this.selectJob)
                 .then(function (response) {
                     console.log(response);
