@@ -28,7 +28,7 @@
     </repositories>
 
     <properties>
-        <kotlin.version>1.4.0</kotlin.version>
+        <kotlin.version>1.6.0</kotlin.version>
         <junit.version>4.13.1</junit.version>
         <serialization.version>1.0.0-RC</serialization.version>
         <main.class>server.MyServerKt</main.class>
